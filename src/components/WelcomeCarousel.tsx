@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { usePermissionStore } from '../contexts/usePermissionStore';
 
 interface Slide {
   title: string;
@@ -34,16 +35,17 @@ const slides: Slide[] = [
 export default function WelcomeCarousel() {
   const [index, setIndex] = useState(0);
   const navigate = useNavigate();
+  const { shown } = usePermissionStore();
 
   const next = () => {
     if (index < slides.length - 1) {
       setIndex(index + 1);
     } else {
-      navigate('/home');
+      navigate(shown ? '/home' : '/permissions');
     }
   };
 
-  const skip = () => navigate('/home');
+  const skip = () => navigate(shown ? '/home' : '/permissions');
 
   return (
     <div className="flex flex-col items-center justify-center h-screen p-4 text-center">

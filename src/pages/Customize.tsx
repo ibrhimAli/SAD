@@ -1,4 +1,3 @@
-import React from 'react';
 import { useThemeStore } from '../contexts/useThemeStore';
 
 export default function Customize() {

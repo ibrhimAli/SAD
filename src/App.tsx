@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Home from './pages/Home';
 import About from './pages/About';
+import WelcomeCarousel from './components/WelcomeCarousel';
 import { useThemeStore } from './contexts/useThemeStore';
 import './index.css';
 
@@ -16,7 +17,8 @@ function App() {
         </button>
         <NavBar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<WelcomeCarousel />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
         </Routes>
       </div>

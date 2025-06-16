@@ -6,6 +6,7 @@ export default function NavBar() {
       <Link to="/home" className="text-blue-600 dark:text-blue-400">Home</Link>
       <Link to="/about" className="text-blue-600 dark:text-blue-400">About</Link>
       <Link to="/customize" className="text-blue-600 dark:text-blue-400">Customize</Link>
+      <Link to="/mood" className="text-blue-600 dark:text-blue-400">Mood</Link>
     </nav>
   );
 }

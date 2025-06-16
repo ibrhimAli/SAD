@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, useLocation, useNavigate } from 'react-ro
 import NavBar from './components/NavBar';
 import Home from './pages/Home';
 import About from './pages/About';
+import Customize from './pages/Customize';
 import WelcomeCarousel from './components/WelcomeCarousel';
 import { useThemeStore } from './contexts/useThemeStore';
 import PermissionsPrompt from './components/PermissionsPrompt';
@@ -36,6 +37,7 @@ function InnerApp() {
         <Route path="/permissions" element={<PermissionsPrompt />} />
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/customize" element={<Customize />} />
       </Routes>
     </div>
   );

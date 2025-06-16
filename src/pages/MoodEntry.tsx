@@ -1,13 +1,19 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useCheckInStore } from '../contexts/useCheckInStore';
 
 const moodEmojis = ['\uD83D\uDE22', '\uD83D\uDE41', '\uD83D\uDE10', '\uD83D\uDE42', '\uD83D\uDE04'];
 
 export default function MoodEntry() {
+  const { setLastPrompt } = useCheckInStore();
   const [mood, setMood] = useState(3);
   const [energy, setEnergy] = useState(5);
   const [sleep, setSleep] = useState(5);
   const [light, setLight] = useState(5);
   const [notes, setNotes] = useState('');
+
+  useEffect(() => {
+    setLastPrompt(Date.now());
+  }, [setLastPrompt]);
 
   return (
     <div className="p-4 space-y-6">

@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { useCheckInStore } from '../contexts/useCheckInStore';
 import { useNavigate } from 'react-router-dom';
 import { usePermissionStore } from '../contexts/usePermissionStore';
 
 export default function PermissionsPrompt() {
   const { setShown } = usePermissionStore();
+  const { setLastPrompt } = useCheckInStore();
   const navigate = useNavigate();
   const [requesting, setRequesting] = useState(false);
 
@@ -22,10 +24,12 @@ export default function PermissionsPrompt() {
       navigator.geolocation.getCurrentPosition(
         () => {
           setShown(true);
+          setLastPrompt(Date.now());
           navigate('/home');
         },
         () => {
           setShown(true);
+          setLastPrompt(Date.now());
           navigate('/home');
         }
       );

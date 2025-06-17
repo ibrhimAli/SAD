@@ -53,6 +53,14 @@ const moodColors: Record<number, string> = {
   5: 'bg-blue-500',
 };
 
+const moodLabels: Record<number, string> = {
+  1: 'Very sad',
+  2: 'Sad',
+  3: 'Neutral',
+  4: 'Happy',
+  5: 'Very happy',
+};
+
 export default function Calendar() {
   const [currentMonth, setCurrentMonth] = React.useState<Date>(startOfMonth(new Date()));
   const entries = useMoodStore((state) => state.entries);
@@ -81,7 +89,11 @@ export default function Calendar() {
         <h2 className="text-xl font-bold">{format(currentMonth, 'MMMM yyyy')}</h2>
         <button onClick={() => setCurrentMonth(addMonths(currentMonth, 1))} className="px-2">Next</button>
       </div>
-      <div className="grid grid-cols-7 gap-2 text-center">
+      <div
+        className="grid grid-cols-7 gap-2 text-center"
+        role="grid"
+        aria-label={`Mood entries for ${format(currentMonth, 'MMMM yyyy')}`}
+      >
         {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((d) => (
           <div key={d} className="font-semibold">{d}</div>
         ))}
@@ -97,7 +109,10 @@ export default function Calendar() {
             >
               <span>{format(day, 'd')}</span>
               {entry && (
-                <span className={`mt-1 w-2 h-2 rounded-full ${moodColors[entry.mood]}`} />
+                <span
+                  aria-label={moodLabels[entry.mood]}
+                  className={`mt-1 w-2 h-2 rounded-full ${moodColors[entry.mood]}`}
+                />
               )}
             </button>
           );

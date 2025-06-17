@@ -7,6 +7,7 @@ import Customize from './pages/Customize';
 import MoodEntry from './pages/MoodEntry';
 import Calendar from './pages/Calendar';
 import TherapyScheduler from './pages/TherapyScheduler';
+import Timer from './pages/Timer';
 import WelcomeCarousel from './components/WelcomeCarousel';
 import { useThemeStore } from './contexts/useThemeStore';
 import PermissionsPrompt from './components/PermissionsPrompt';
@@ -77,6 +78,7 @@ function InnerApp() {
         <Route path="/mood" element={<MoodEntry />} />
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/scheduler" element={<TherapyScheduler />} />
+        <Route path="/timer" element={<Timer />} />
       </Routes>
     </div>
   );

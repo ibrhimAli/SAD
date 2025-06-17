@@ -68,7 +68,7 @@ export default function WelcomeCarousel() {
           <div
             key={i}
             className={`h-2 w-2 rounded-full ${
-              i === index ? 'bg-primary' : 'bg-gray-300 dark:bg-gray-600'
+              i === index ? 'bg-primary' : 'bg-mutedBlueGray dark:bg-indigo'
             }`}
           />
         ))}

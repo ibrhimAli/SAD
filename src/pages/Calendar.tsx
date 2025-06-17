@@ -21,7 +21,7 @@ interface DayDetailModalProps {
 function DayDetailModal({ date, entry, onClose }: DayDetailModalProps) {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className="bg-white dark:bg-gray-800 p-4 rounded shadow max-w-sm w-full">
+      <div className="bg-creamWhite dark:bg-indigo p-4 rounded shadow max-w-sm w-full">
         <h2 className="text-lg font-bold mb-2">{format(date, 'PPP')}</h2>
         {entry ? (
           <div className="space-y-1">
@@ -46,11 +46,11 @@ function DayDetailModal({ date, entry, onClose }: DayDetailModalProps) {
 }
 
 const moodColors: Record<number, string> = {
-  1: 'bg-red-500',
-  2: 'bg-orange-500',
-  3: 'bg-yellow-400',
-  4: 'bg-green-500',
-  5: 'bg-blue-500',
+  1: 'bg-indigo',
+  2: 'bg-mutedBlueGray',
+  3: 'bg-yellow',
+  4: 'bg-paleSky',
+  5: 'bg-creamWhite',
 };
 
 const moodLabels: Record<number, string> = {
@@ -105,7 +105,7 @@ export default function Calendar() {
             <button
               key={key}
               onClick={() => setSelected(day)}
-              className={`h-16 border rounded flex flex-col items-center justify-center ${!inMonth ? 'text-gray-400' : ''}`}
+              className={`h-16 border rounded flex flex-col items-center justify-center ${!inMonth ? 'text-mutedBlueGray' : ''}`}
             >
               <span>{format(day, 'd')}</span>
               {entry && (

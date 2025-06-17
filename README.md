@@ -27,7 +27,7 @@ location data will be unavailable.
 
 ## Getting Started
 
-Install dependencies before running any build or lint step:
+Install dependencies before running any build, test or lint step. **Skipping this will cause `npm run lint` to fail.**
 
 ```bash
 npm install
@@ -45,7 +45,7 @@ Create a production build:
 npm run build
 ```
 
-Run the linter after installing dependencies:
+Run the linter once dependencies are installed:
 
 ```bash
 npm run lint

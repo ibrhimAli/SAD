@@ -1,4 +1,3 @@
-import React from 'react'
 import MoodAnalytics from '../components/MoodAnalytics'
 
 export default function Analytics() {

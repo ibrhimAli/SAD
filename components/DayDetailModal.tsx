@@ -60,10 +60,16 @@ export default function DayDetailModal({ visible, entry, onDismiss }: DayDetailM
       transparent
       animationType="slide"
       onRequestClose={handleDismiss}>
-      <View style={styles.overlay}>
+      <View style={styles.overlay} testID="day-detail-overlay">
         <GestureDetector gesture={gesture}>
-          <Animated.View style={[styles.container, { backgroundColor }, animatedStyle]}>
-            <Pressable onPress={handleDismiss} style={styles.dismiss} hitSlop={8}>
+          <Animated.View
+            style={[styles.container, { backgroundColor }, animatedStyle]}
+            testID="day-detail-modal">
+            <Pressable
+              onPress={handleDismiss}
+              style={styles.dismiss}
+              hitSlop={8}
+              testID="dismiss-button">
               <ThemedText type="link">Dismiss</ThemedText>
             </Pressable>
             {entry && (

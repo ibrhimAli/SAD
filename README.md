@@ -66,9 +66,11 @@ without building will omit all CSS.
 
 Customization settings are managed with a zustand store and persisted to
 `localStorage`. On the **Customize** page you can toggle dark mode, select a
-season and set how frequently notifications should appear. These choices are
-loaded when the app starts so your preferred theme and settings remain across
-visits.
+season and set how frequently notifications should appear. Each season maps to
+a background gradient and optional illustration loaded from the `public/`
+folder. Selecting a different season instantly changes the look of the app.
+These choices are loaded when the app starts so your preferred theme and
+settings remain across visits.
 
 ## Expanding the ESLint configuration
 

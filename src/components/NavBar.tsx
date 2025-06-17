@@ -51,9 +51,6 @@ export default function NavBar() {
       >
         Analytics
       </NavLink>
-      <NavLink to="/timer" className={linkClass} onClick={() => setOpen(false)}>
-        Timer
-      </NavLink>
     </>
   );
 

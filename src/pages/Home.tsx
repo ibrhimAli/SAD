@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import StreakCounter from '../components/StreakCounter';
+import ContentFeed from '../components/ContentFeed';
 
 export default function Home() {
   return (
@@ -7,6 +8,10 @@ export default function Home() {
       <h1 className="text-2xl font-bold">Home Page</h1>
       <p className="mt-2">Welcome to the app.</p>
       <StreakCounter />
+      <div className="mt-4">
+        <ContentFeed />
+      </div>
     </motion.div>
   );
 }
+

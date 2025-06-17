@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
 import { Modal, Pressable, StyleSheet, View } from 'react-native';
 import Animated, {
   runOnJS,
@@ -11,6 +11,7 @@ import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import { ThemedText } from './ThemedText';
 import { useThemeColor } from '@/hooks/useThemeColor';
 import type { MoodEntry } from '@/constants/moods';
+import { saveMoodEntry } from '@/hooks/useMoodStorage';
 
 export type DayDetailModalProps = {
   visible: boolean;
@@ -21,6 +22,13 @@ export type DayDetailModalProps = {
 export default function DayDetailModal({ visible, entry, onDismiss }: DayDetailModalProps) {
   const backgroundColor = useThemeColor({}, 'background');
   const translateY = useSharedValue(0);
+
+  const handleDismiss = useCallback(() => {
+    if (entry) {
+      saveMoodEntry(entry);
+    }
+    onDismiss();
+  }, [entry, onDismiss]);
 
   useEffect(() => {
     if (visible) {
@@ -36,7 +44,7 @@ export default function DayDetailModal({ visible, entry, onDismiss }: DayDetailM
     })
     .onEnd((e) => {
       if (e.translationY > 100) {
-        translateY.value = withTiming(400, { duration: 150 }, () => runOnJS(onDismiss)());
+        translateY.value = withTiming(400, { duration: 150 }, () => runOnJS(handleDismiss)());
       } else {
         translateY.value = withTiming(0);
       }
@@ -51,11 +59,11 @@ export default function DayDetailModal({ visible, entry, onDismiss }: DayDetailM
       visible={visible}
       transparent
       animationType="slide"
-      onRequestClose={onDismiss}>
+      onRequestClose={handleDismiss}>
       <View style={styles.overlay}>
         <GestureDetector gesture={gesture}>
           <Animated.View style={[styles.container, { backgroundColor }, animatedStyle]}>
-            <Pressable onPress={onDismiss} style={styles.dismiss} hitSlop={8}>
+            <Pressable onPress={handleDismiss} style={styles.dismiss} hitSlop={8}>
               <ThemedText type="link">Dismiss</ThemedText>
             </Pressable>
             {entry && (

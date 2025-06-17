@@ -44,7 +44,11 @@ export default function CalendarScreen() {
 
   return (
     <ThemedView style={styles.container}>
-      <Calendar markedDates={markedDates} onDayPress={handleDayPress} />
+      <Calendar
+        testID="calendar"
+        markedDates={markedDates}
+        onDayPress={handleDayPress}
+      />
       <DayDetailModal
         visible={selectedEntry !== null}
         entry={selectedEntry}

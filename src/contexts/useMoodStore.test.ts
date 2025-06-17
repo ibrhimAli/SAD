@@ -23,12 +23,21 @@ beforeEach(() => {
       },
     },
   } as Navigator
-  global.fetch = vi.fn().mockResolvedValue({
-    json: async () => ({
-      status: 'OK',
-      results: { sunrise: '06:00', sunset: '18:00' },
-    }),
-  } as Response)
+  let call = 0
+  global.fetch = vi.fn().mockImplementation(() => {
+    call++
+    if (call === 1) {
+      return Promise.resolve({
+        json: async () => ({
+          status: 'OK',
+          results: { sunrise: '06:00', sunset: '18:00' },
+        }),
+      } as Response)
+    }
+    return Promise.resolve({
+      json: async () => ({ current_weather: { weathercode: 2 } }),
+    } as Response)
+  })
 })
 
 describe('useMoodStore', () => {
@@ -39,6 +48,7 @@ describe('useMoodStore', () => {
     const entry = store.getEntries()[0]
     expect(entry.sunrise).toBe('06:00')
     expect(entry.sunset).toBe('18:00')
+    expect(entry.weather).toBe('cloudy')
     expect(store.getStreak()).toBe(1)
   })
 })

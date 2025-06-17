@@ -11,12 +11,13 @@ export interface MoodEntry {
   coords?: { latitude: number; longitude: number };
   sunrise?: string;
   sunset?: string;
+  weather?: string;
 }
 
 interface MoodState {
   entries: MoodEntry[];
   addEntry: (
-    data: Omit<MoodEntry, 'timestamp' | 'coords' | 'sunrise' | 'sunset'>,
+    data: Omit<MoodEntry, 'timestamp' | 'coords' | 'sunrise' | 'sunset' | 'weather'>,
   ) => Promise<void>;
   getEntries: () => MoodEntry[];
   getStreak: () => number;
@@ -54,6 +55,36 @@ export const useMoodStore = create<MoodState>((set, get) => ({
           }
         } catch {
           // ignore fetch errors
+        }
+
+        try {
+          const wRes = await fetch(
+            `https://api.open-meteo.com/v1/forecast?latitude=${coords.latitude}&longitude=${coords.longitude}&current_weather=true`,
+          );
+          const wJson = await wRes.json();
+          const code = wJson?.current_weather?.weathercode as number | undefined;
+          if (typeof code === 'number') {
+            if (code === 0) entry.weather = 'clear';
+            else if (code >= 1 && code <= 3) entry.weather = 'cloudy';
+            else if (
+              (code >= 51 && code <= 67) ||
+              (code >= 80 && code <= 82) ||
+              code === 61 ||
+              code === 63 ||
+              code === 65 ||
+              (code >= 95 && code <= 99)
+            )
+              entry.weather = 'rain';
+            else if (
+              (code >= 71 && code <= 77) ||
+              code === 85 ||
+              code === 86
+            )
+              entry.weather = 'snow';
+            else entry.weather = 'other';
+          }
+        } catch {
+          // ignore weather fetch errors
         }
       } catch {
         // ignore geolocation errors

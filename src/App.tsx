@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Customize from './pages/Customize';
 import MoodEntry from './pages/MoodEntry';
+import Calendar from './pages/Calendar';
 import WelcomeCarousel from './components/WelcomeCarousel';
 import { useThemeStore } from './contexts/useThemeStore';
 import PermissionsPrompt from './components/PermissionsPrompt';
@@ -73,6 +74,7 @@ function InnerApp() {
         <Route path="/about" element={<About />} />
         <Route path="/customize" element={<Customize />} />
         <Route path="/mood" element={<MoodEntry />} />
+        <Route path="/calendar" element={<Calendar />} />
       </Routes>
     </div>
   );

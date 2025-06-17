@@ -72,8 +72,19 @@ export default tseslint.config({
   rules: {
     // other rules...
     // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
+  ...reactX.configs['recommended-typescript'].rules,
+  ...reactDom.configs.recommended.rules,
   },
 })
 ```
+
+## Calendar and date utilities
+
+The calendar page uses [`date-fns`](https://date-fns.org/) for working with
+dates. Install dependencies, including this library, with:
+
+```bash
+npm install
+```
+
+See `src/pages/Calendar.tsx` for usage examples.

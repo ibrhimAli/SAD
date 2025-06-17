@@ -21,7 +21,7 @@ function InnerApp() {
   const { dark, toggle, season } = useThemeStore();
   const colors = getSeasonColors(season);
   const { shown } = usePermissionStore();
-  const { lastPrompt, setLastPrompt } = useCheckInStore();
+  const { lastPrompt, setLastPrompt, reminderTime } = useCheckInStore();
   const location = useLocation();
   const navigate = useNavigate();
   const [showCheckIn, setShowCheckIn] = React.useState(false);
@@ -46,6 +46,47 @@ function InnerApp() {
       setShowCheckIn(true);
     }
   }, [lastPrompt, location.pathname]);
+
+  React.useEffect(() => {
+    if (typeof window === 'undefined' || !('Notification' in window)) {
+      return;
+    }
+    if (Notification.permission === 'default') {
+      void Notification.requestPermission();
+    }
+
+    let dailyId: number | undefined;
+
+    const schedule = () => {
+      const [h, m] = reminderTime.split(':').map(Number);
+      const now = new Date();
+      const next = new Date();
+      next.setHours(h, m, 0, 0);
+      if (next.getTime() <= now.getTime()) {
+        next.setDate(next.getDate() + 1);
+      }
+      const delay = next.getTime() - now.getTime();
+
+      const trigger = () => {
+        if (Notification.permission === 'granted') {
+          new Notification('Daily Check-In', {
+            body: "It's time for your daily mood check-in.",
+          });
+        }
+        dailyId = window.setTimeout(trigger, 24 * 60 * 60 * 1000);
+      };
+
+      dailyId = window.setTimeout(trigger, delay);
+    };
+
+    schedule();
+
+    return () => {
+      if (dailyId !== undefined) {
+        clearTimeout(dailyId);
+      }
+    };
+  }, [reminderTime]);
 
   const handleCheckIn = () => {
     setLastPrompt(Date.now());

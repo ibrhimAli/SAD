@@ -9,6 +9,7 @@ export default function NavBar() {
       <Link to="/mood" className="text-blue-600 dark:text-blue-400">Mood</Link>
       <Link to="/calendar" className="text-blue-600 dark:text-blue-400">Calendar</Link>
       <Link to="/scheduler" className="text-blue-600 dark:text-blue-400">Scheduler</Link>
+      <Link to="/analytics" className="text-blue-600 dark:text-blue-400">Analytics</Link>
       <Link to="/timer" className="text-blue-600 dark:text-blue-400">Timer</Link>
     </nav>
   );

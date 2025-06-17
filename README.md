@@ -16,6 +16,7 @@ browser.
 - **Customization** – toggle dark mode, choose a seasonal theme (Spring, Summer,
   Autumn or Winter) and adjust notification frequency.
 - **Streak Counter** – see how many days in a row you've entered your mood.
+- **Analytics** – visualize mood trends and light exposure with interactive charts.
 
 ## Browser requirements
 
@@ -37,6 +38,9 @@ Install dependencies before running any build, test or lint step. **Skipping thi
 ```bash
 npm install
 ```
+
+This also installs the charting libraries `chart.js` and `react-chartjs-2`
+used by the analytics page.
 
 Start the development server:
 
@@ -133,6 +137,12 @@ npm install
 ```
 
 See `src/pages/Calendar.tsx` for usage examples.
+
+## Analytics and charts
+
+Mood trends are visualized using [Chart.js](https://www.chartjs.org/) via the
+`react-chartjs-2` bindings. Both packages are installed with the project
+dependencies and loaded by the `Analytics` page under `src/pages/Analytics.tsx`.
 
 ## License
 

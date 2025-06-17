@@ -25,6 +25,30 @@ In the output, you'll find options to open the app in a
 
 You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
+## Calendar screen and day detail modal
+
+Navigate to the **Calendar** tab to view saved mood entries. Days containing an
+entry are shown with a colored dot. Tap on a marked day to open a modal with the
+details for that entry. Dismiss the modal by dragging it down or by pressing the
+**Dismiss** button.
+
+### Dependencies
+
+These features use several libraries that are already listed in
+`package.json`:
+
+- `react-native-calendars` for the calendar UI
+- `react-native-reanimated` and `react-native-gesture-handler` for modal
+  animations and gestures
+- `@react-native-async-storage/async-storage` to persist mood entries
+
+Install them together with the rest of the dependencies and then start the app:
+
+```bash
+npm install
+npx expo start
+```
+
 ## Get a fresh project
 
 When you're ready, run:

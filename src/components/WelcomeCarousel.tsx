@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { usePermissionStore } from '../contexts/usePermissionStore';
 
 interface Slide {
   title: string;
@@ -11,41 +10,35 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    title: 'Welcome',
-    description: 'Thanks for installing our app!',
-    icon: '👋',
+    title: 'Log your mood',
+    description: 'Track how you feel every day.',
+    icon: '📝',
   },
   {
-    title: 'Features',
-    description: 'Explore a variety of useful features.',
-    icon: '✨',
+    title: 'View insights',
+    description: 'Discover patterns in your emotions.',
+    icon: '📊',
   },
   {
-    title: 'Customize',
-    description: 'Toggle between light and dark themes.',
-    icon: '🎨',
-  },
-  {
-    title: 'Get Started',
-    description: 'Jump in and enjoy the experience.',
-    icon: '🚀',
+    title: 'Get tips for well-being',
+    description: 'Personalised advice to improve your mood.',
+    icon: '💡',
   },
 ];
 
 export default function WelcomeCarousel() {
   const [index, setIndex] = useState(0);
   const navigate = useNavigate();
-  const { shown } = usePermissionStore();
 
   const next = () => {
     if (index < slides.length - 1) {
       setIndex(index + 1);
     } else {
-      navigate(shown ? '/home' : '/permissions');
+      navigate('/mood');
     }
   };
 
-  const skip = () => navigate(shown ? '/home' : '/permissions');
+  const skip = () => navigate('/mood');
 
   return (
     <div className="flex flex-col items-center justify-center h-screen p-4 text-center">
@@ -84,7 +77,7 @@ export default function WelcomeCarousel() {
         onClick={next}
         className="mt-6 px-4 py-2 bg-primary text-white rounded"
       >
-        {index === slides.length - 1 ? 'Start' : 'Next'}
+        {index === slides.length - 1 ? 'Get Started' : 'Next'}
       </button>
     </div>
   );

@@ -43,7 +43,7 @@ beforeEach(() => {
 describe('useMoodStore', () => {
   it('adds an entry and computes streak', async () => {
     const store = useMoodStore.getState()
-    await store.addEntry({ mood: 3, energy: 2, sleep: 1, light: 4, notes: 'ok' })
+    await store.addEntry({ mood: 3, notes: 'ok' })
     expect(store.getEntries()).toHaveLength(1)
     const entry = store.getEntries()[0]
     expect(entry.sunrise).toBe('06:00')

@@ -9,13 +9,10 @@ export default function MoodEntry() {
   const { setLastPrompt } = useCheckInStore();
   const { addEntry } = useMoodStore();
   const [mood, setMood] = useState(3);
-  const [energy, setEnergy] = useState(5);
-  const [sleep, setSleep] = useState(5);
-  const [light, setLight] = useState(5);
   const [notes, setNotes] = useState('');
 
   const handleSave = () => {
-    addEntry({ mood, energy, sleep, light, notes });
+    addEntry({ mood, notes });
     setNotes('');
   };
 
@@ -36,8 +33,8 @@ export default function MoodEntry() {
               onClick={() => setMood(index + 1)}
               aria-label={moodLabels[index]}
               className={
-                'text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary ' +
-                (mood === index + 1 ? 'scale-125' : 'opacity-50')
+                'w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary ' +
+                (mood === index + 1 ? 'scale-110' : 'opacity-50')
               }
             >
               {emoji}
@@ -46,50 +43,6 @@ export default function MoodEntry() {
         </div>
       </div>
 
-      <div>
-        <label htmlFor="energy" className="block mb-1">
-          Energy Level: {energy}
-        </label>
-        <input
-          id="energy"
-          type="range"
-          min="1"
-          max="10"
-          value={energy}
-          onChange={(e) => setEnergy(Number(e.target.value))}
-          className="w-full"
-        />
-      </div>
-
-      <div>
-        <label htmlFor="sleep" className="block mb-1">
-          Sleep Quality: {sleep}
-        </label>
-        <input
-          id="sleep"
-          type="range"
-          min="1"
-          max="10"
-          value={sleep}
-          onChange={(e) => setSleep(Number(e.target.value))}
-          className="w-full"
-        />
-      </div>
-
-      <div>
-        <label htmlFor="light" className="block mb-1">
-          Light Exposure: {light}
-        </label>
-        <input
-          id="light"
-          type="range"
-          min="1"
-          max="10"
-          value={light}
-          onChange={(e) => setLight(Number(e.target.value))}
-          className="w-full"
-        />
-      </div>
 
       <div>
         <label htmlFor="notes" className="block mb-1">
@@ -99,7 +52,7 @@ export default function MoodEntry() {
           id="notes"
           value={notes}
           onChange={(e) => setNotes(e.target.value)}
-          className="w-full p-2 border rounded text-indigo dark:text-creamWhite"
+          className="w-full p-2 border rounded bg-creamWhite text-indigo dark:text-creamWhite"
           rows={4}
         />
       </div>

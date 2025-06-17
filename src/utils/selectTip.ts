@@ -13,9 +13,7 @@ export function selectTip(entries: MoodEntry[]): string {
   let cond: Tip['condition'] = 'any'
   if (recent.length > 0) {
     const avgMood = recent.reduce((s, e) => s + e.mood, 0) / recent.length
-    const avgLight = recent.reduce((s, e) => s + e.light, 0) / recent.length
     if (avgMood <= 2) cond = 'lowMood'
-    else if (avgLight <= 3) cond = 'lowLight'
   }
   const candidates = allTips.filter(
     (t) => t.condition === cond || t.condition === 'any'

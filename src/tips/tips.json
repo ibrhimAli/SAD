@@ -1,0 +1,8 @@
+[
+  { "text": "Open the curtains to let in sunlight.", "condition": "lowLight" },
+  { "text": "Take a short walk outside.", "condition": "lowLight" },
+  { "text": "Write down something you're grateful for.", "condition": "lowMood" },
+  { "text": "Reach out to a friend or family member.", "condition": "lowMood" },
+  { "text": "Practice deep breathing for one minute.", "condition": "any" },
+  { "text": "Take a moment to stretch.", "condition": "any" }
+]

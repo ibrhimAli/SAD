@@ -1,4 +1,5 @@
 import { useThemeStore } from '../contexts/useThemeStore';
+import { useCheckInStore } from '../contexts/useCheckInStore';
 
 export default function Customize() {
   const {
@@ -9,6 +10,7 @@ export default function Customize() {
     notificationFrequency,
     setNotificationFrequency,
   } = useThemeStore();
+  const { reminderTime, setReminderTime } = useCheckInStore();
 
   return (
     <div className="p-4 space-y-6">
@@ -53,6 +55,19 @@ export default function Customize() {
           value={notificationFrequency}
           onChange={(e) => setNotificationFrequency(Number(e.target.value))}
           className="w-full"
+        />
+      </div>
+
+      <div>
+        <label htmlFor="reminder-time" className="block mb-1">
+          Daily Check-In Time
+        </label>
+        <input
+          id="reminder-time"
+          type="time"
+          value={reminderTime}
+          onChange={(e) => setReminderTime(e.target.value)}
+          className="p-2 border rounded text-gray-900 dark:text-white"
         />
       </div>
     </div>

@@ -14,7 +14,7 @@ browser.
   about therapy activities.
 - **Timer** – a simple countdown timer.
 - **Customization** – toggle dark mode, choose a seasonal theme (Spring, Summer,
-  Autumn or Winter) and adjust notification frequency.
+  Autumn or Winter), adjust notification frequency and set a daily check-in time.
 - **Streak Counter** – see how many days in a row you've entered your mood.
 - **Analytics** – visualize mood trends and light exposure with interactive charts.
 

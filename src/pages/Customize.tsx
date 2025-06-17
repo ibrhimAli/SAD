@@ -34,7 +34,7 @@ export default function Customize() {
           id="season-select"
           value={season}
           onChange={(e) => setSeason(e.target.value)}
-          className="p-2 border rounded text-gray-900 dark:text-white"
+          className="p-2 border rounded text-indigo dark:text-creamWhite"
         >
           <option value="Spring">Spring</option>
           <option value="Summer">Summer</option>
@@ -67,7 +67,7 @@ export default function Customize() {
           type="time"
           value={reminderTime}
           onChange={(e) => setReminderTime(e.target.value)}
-          className="p-2 border rounded text-gray-900 dark:text-white"
+          className="p-2 border rounded text-indigo dark:text-creamWhite"
         />
       </div>
     </div>

@@ -96,13 +96,13 @@ function InnerApp() {
   return (
     <div
       className={`min-h-screen ${
-        dark ? 'dark bg-gray-900 text-white' : `${colors.bg} text-gray-900`
+        dark ? 'dark bg-indigo text-creamWhite' : `${colors.bg} text-indigo`
       }`}
       style={{ backgroundImage: `url(${colors.image})`, backgroundSize: 'cover' }}
     >
       {showCheckIn && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white dark:bg-gray-800 p-4 rounded shadow">
+          <div className="bg-creamWhite dark:bg-indigo p-4 rounded shadow">
             <p className="mb-4">It's time for your daily check-in.</p>
             <button
               onClick={handleCheckIn}

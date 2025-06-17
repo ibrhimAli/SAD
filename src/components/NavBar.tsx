@@ -6,10 +6,10 @@ export default function NavBar() {
 
   const linkClass = ({ isActive }: { isActive: boolean }) =>
     [
-      'block px-2 py-1 rounded hover:bg-gray-300 dark:hover:bg-gray-700',
+      'block px-2 py-1 rounded hover:bg-mutedBlueGray dark:hover:bg-indigo',
       isActive
         ? 'bg-primary text-white dark:bg-primary-dark'
-        : 'text-blue-600 dark:text-blue-400',
+        : 'text-indigo dark:text-yellow',
     ].join(' ');
 
   const links = (
@@ -55,10 +55,10 @@ export default function NavBar() {
   );
 
   return (
-    <nav className="bg-gray-200 dark:bg-gray-800 p-4">
+    <nav className="bg-paleSky dark:bg-indigo p-4">
       <div className="flex items-center justify-between md:hidden">
         <button
-          className="text-blue-600 dark:text-blue-400"
+          className="text-indigo dark:text-yellow"
           onClick={() => setOpen((o) => !o)}
         >
           &#9776;

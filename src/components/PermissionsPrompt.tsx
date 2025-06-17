@@ -43,12 +43,12 @@ export default function PermissionsPrompt() {
         We use notifications and your location to enhance your experience.
       </p>
       {!notificationsSupported && (
-        <p className="mb-2 text-red-500">
+        <p className="mb-2 text-yellow">
           Notifications are not supported by your browser.
         </p>
       )}
       {!geolocationSupported && (
-        <p className="mb-2 text-red-500">
+        <p className="mb-2 text-yellow">
           Geolocation is not supported by your browser.
         </p>
       )}

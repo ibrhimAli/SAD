@@ -60,7 +60,7 @@ export default function TherapyScheduler() {
           type="time"
           value={newTime}
           onChange={(e) => setNewTime(e.target.value)}
-          className="border p-2 rounded text-gray-900 dark:text-white"
+          className="border p-2 rounded text-indigo dark:text-creamWhite"
         />
         <button onClick={handleAdd} className="px-4 py-2 bg-primary text-white rounded">
           Add
@@ -72,7 +72,7 @@ export default function TherapyScheduler() {
             <span className="flex-1">{time}</span>
             <button
               onClick={() => removeTime(time)}
-              className="px-2 py-1 bg-red-500 text-white rounded"
+              className="px-2 py-1 bg-yellow text-indigo rounded"
             >
               Remove
             </button>

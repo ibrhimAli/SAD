@@ -99,7 +99,7 @@ export default function MoodEntry() {
           id="notes"
           value={notes}
           onChange={(e) => setNotes(e.target.value)}
-          className="w-full p-2 border rounded text-gray-900 dark:text-white"
+          className="w-full p-2 border rounded text-indigo dark:text-creamWhite"
           rows={4}
         />
       </div>

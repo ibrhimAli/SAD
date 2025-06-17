@@ -28,6 +28,6 @@ export default function ContentFeed() {
   if (!tip) return null
 
   return (
-    <div className="p-2 border rounded bg-gray-100 dark:bg-gray-700">{tip}</div>
+    <div className="p-2 border rounded bg-creamWhite dark:bg-indigo">{tip}</div>
   )
 }

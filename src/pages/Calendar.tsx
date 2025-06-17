@@ -9,7 +9,8 @@ import {
   addDays,
   isSameMonth,
 } from 'date-fns';
-import { useMoodStore, MoodEntry } from '../contexts/useMoodStore';
+import { useMoodStore } from '../contexts/useMoodStore';
+import type { MoodEntry } from '../contexts/useMoodStore';
 
 interface DayDetailModalProps {
   date: Date;

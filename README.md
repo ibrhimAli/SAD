@@ -88,3 +88,7 @@ npm install
 ```
 
 See `src/pages/Calendar.tsx` for usage examples.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).

@@ -25,6 +25,11 @@ check‑ins. Geolocation allows mood entries to be tagged with your location. Al
 features continue to work if permissions are declined, but reminders and
 location data will be unavailable.
 
+## Node.js requirement
+
+This project relies on features from Node.js 18 or newer. Ensure you are running
+Node **18+** before installing dependencies and running the development scripts.
+
 ## Getting Started
 
 Install dependencies before running any build, test or lint step. **Skipping this will cause `npm run lint` to fail.**

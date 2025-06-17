@@ -3,6 +3,7 @@ import { useCheckInStore } from '../contexts/useCheckInStore';
 import { useMoodStore } from '../contexts/useMoodStore';
 
 const moodEmojis = ['\uD83D\uDE22', '\uD83D\uDE41', '\uD83D\uDE10', '\uD83D\uDE42', '\uD83D\uDE04'];
+const moodLabels = ['Very sad', 'Sad', 'Neutral', 'Happy', 'Very happy'];
 
 export default function MoodEntry() {
   const { setLastPrompt } = useCheckInStore();
@@ -33,8 +34,9 @@ export default function MoodEntry() {
             <button
               key={emoji}
               onClick={() => setMood(index + 1)}
+              aria-label={moodLabels[index]}
               className={
-                'text-3xl transition transform ' +
+                'text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary ' +
                 (mood === index + 1 ? 'scale-125' : 'opacity-50')
               }
             >

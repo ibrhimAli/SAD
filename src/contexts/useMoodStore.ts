@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { format, subDays, startOfDay } from 'date-fns';
 
 export interface MoodEntry {
   timestamp: number;
@@ -14,6 +15,7 @@ interface MoodState {
   entries: MoodEntry[];
   addEntry: (data: Omit<MoodEntry, 'timestamp' | 'coords'>) => Promise<void>;
   getEntries: () => MoodEntry[];
+  getStreak: () => number;
 }
 
 const stored = localStorage.getItem('moodEntries');
@@ -46,4 +48,21 @@ export const useMoodStore = create<MoodState>((set, get) => ({
     set({ entries: updated });
   },
   getEntries: () => get().entries,
+  getStreak: () => {
+    const entryDates = new Set(
+      get()
+        .entries
+        .map((e) => format(e.timestamp, 'yyyy-MM-dd')),
+    );
+
+    let streak = 0;
+    let day = startOfDay(new Date());
+
+    while (entryDates.has(format(day, 'yyyy-MM-dd'))) {
+      streak += 1;
+      day = subDays(day, 1);
+    }
+
+    return streak;
+  },
 }));

@@ -10,13 +10,15 @@ import TherapyScheduler from './pages/TherapyScheduler';
 import Timer from './pages/Timer';
 import WelcomeCarousel from './components/WelcomeCarousel';
 import { useThemeStore } from './contexts/useThemeStore';
+import { getSeasonColors } from './utils/getSeasonColors';
 import PermissionsPrompt from './components/PermissionsPrompt';
 import { usePermissionStore } from './contexts/usePermissionStore';
 import { useCheckInStore } from './contexts/useCheckInStore';
 import './index.css';
 
 function InnerApp() {
-  const { dark, toggle } = useThemeStore();
+  const { dark, toggle, season } = useThemeStore();
+  const colors = getSeasonColors(season);
   const { shown } = usePermissionStore();
   const { lastPrompt, setLastPrompt } = useCheckInStore();
   const location = useLocation();
@@ -51,7 +53,12 @@ function InnerApp() {
   };
 
   return (
-    <div className={dark ? 'dark min-h-screen bg-gray-900 text-white' : 'min-h-screen bg-white text-gray-900'}>
+    <div
+      className={`min-h-screen ${
+        dark ? 'dark bg-gray-900 text-white' : `${colors.bg} text-gray-900`
+      }`}
+      style={{ backgroundImage: `url(${colors.image})`, backgroundSize: 'cover' }}
+    >
       {showCheckIn && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-white dark:bg-gray-800 p-4 rounded shadow">

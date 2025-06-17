@@ -26,9 +26,6 @@ function DayDetailModal({ date, entry, onClose }: DayDetailModalProps) {
         {entry ? (
           <div className="space-y-1">
             <p>Mood: {entry.mood}</p>
-            <p>Energy: {entry.energy}</p>
-            <p>Sleep: {entry.sleep}</p>
-            <p>Light: {entry.light}</p>
             {entry.notes && <p>Notes: {entry.notes}</p>}
           </div>
         ) : (

@@ -4,9 +4,6 @@ import { format, subDays, startOfDay } from 'date-fns';
 export interface MoodEntry {
   timestamp: number;
   mood: number;
-  energy: number;
-  sleep: number;
-  light: number;
   notes: string;
   coords?: { latitude: number; longitude: number };
   sunrise?: string;
@@ -17,7 +14,7 @@ export interface MoodEntry {
 interface MoodState {
   entries: MoodEntry[];
   addEntry: (
-    data: Omit<MoodEntry, 'timestamp' | 'coords' | 'sunrise' | 'sunset' | 'weather'>,
+    data: Pick<MoodEntry, 'mood' | 'notes'>,
   ) => Promise<void>;
   getEntries: () => MoodEntry[];
   getStreak: () => number;

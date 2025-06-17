@@ -6,7 +6,7 @@ browser.
 
 ## Features
 
-- **Mood Entry** – track mood, energy, sleep quality, light exposure and notes.
+- **Mood Entry** – track mood and optional notes.
   When geolocation is available the entry is tagged with your coordinates.
 - **Calendar** – view past entries on a monthly calendar and tap a day to see
   details.
@@ -16,7 +16,7 @@ browser.
 - **Customization** – toggle dark mode, choose a seasonal theme (Spring, Summer,
   Autumn or Winter), adjust notification frequency and set a daily check-in time.
 - **Streak Counter** – see how many days in a row you've entered your mood.
-- **Analytics** – visualize mood trends and light exposure with interactive charts.
+- **Analytics** – visualize mood trends with interactive charts.
 
 ## Browser requirements
 

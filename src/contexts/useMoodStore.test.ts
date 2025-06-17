@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from 'vitest'
+import { describe, it, expect, beforeEach, vi } from 'vitest'
 import { useMoodStore } from './useMoodStore'
 
 declare global {
@@ -23,6 +23,12 @@ beforeEach(() => {
       },
     },
   } as Navigator
+  global.fetch = vi.fn().mockResolvedValue({
+    json: async () => ({
+      status: 'OK',
+      results: { sunrise: '06:00', sunset: '18:00' },
+    }),
+  } as Response)
 })
 
 describe('useMoodStore', () => {
@@ -30,6 +36,9 @@ describe('useMoodStore', () => {
     const store = useMoodStore.getState()
     await store.addEntry({ mood: 3, energy: 2, sleep: 1, light: 4, notes: 'ok' })
     expect(store.getEntries()).toHaveLength(1)
+    const entry = store.getEntries()[0]
+    expect(entry.sunrise).toBe('06:00')
+    expect(entry.sunset).toBe('18:00')
     expect(store.getStreak()).toBe(1)
   })
 })

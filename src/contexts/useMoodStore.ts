@@ -9,11 +9,15 @@ export interface MoodEntry {
   light: number;
   notes: string;
   coords?: { latitude: number; longitude: number };
+  sunrise?: string;
+  sunset?: string;
 }
 
 interface MoodState {
   entries: MoodEntry[];
-  addEntry: (data: Omit<MoodEntry, 'timestamp' | 'coords'>) => Promise<void>;
+  addEntry: (
+    data: Omit<MoodEntry, 'timestamp' | 'coords' | 'sunrise' | 'sunset'>,
+  ) => Promise<void>;
   getEntries: () => MoodEntry[];
   getStreak: () => number;
 }
@@ -38,6 +42,19 @@ export const useMoodStore = create<MoodState>((set, get) => ({
           latitude: coords.latitude,
           longitude: coords.longitude,
         };
+
+        try {
+          const res = await fetch(
+            `https://api.sunrise-sunset.org/json?lat=${coords.latitude}&lng=${coords.longitude}&formatted=0`,
+          );
+          const json = await res.json();
+          if (json.status === 'OK') {
+            entry.sunrise = json.results.sunrise;
+            entry.sunset = json.results.sunset;
+          }
+        } catch {
+          // ignore fetch errors
+        }
       } catch {
         // ignore geolocation errors
       }

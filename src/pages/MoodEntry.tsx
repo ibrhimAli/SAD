@@ -25,8 +25,8 @@ export default function MoodEntry() {
     setLastPrompt(Date.now());
   }, [setLastPrompt]);
 
-  return (
-    <div className="p-4 space-y-6">
+    return (
+      <div className="p-4 space-y-6 card">
       <h1 className="text-2xl font-bold">Mood Entry</h1>
 
       <div>

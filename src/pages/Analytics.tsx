@@ -13,7 +13,7 @@ export default function Analytics() {
   return (
     <div className="p-4 space-y-4">
       <h1 className="text-2xl font-bold">Analytics</h1>
-      <div className="bg-white dark:bg-indigo p-4 rounded shadow">
+      <div className="card">
         <MoodAnalytics />
       </div>
       {!trialStarted && (

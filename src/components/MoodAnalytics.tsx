@@ -110,7 +110,7 @@ export default function MoodAnalytics() {
         </div>
         <Line data={lineChartData} options={options} />
       </div>
-      <div className="p-4 border rounded">
+      <div className="p-4 border rounded bg-creamWhite dark:bg-indigo">
         <h3 className="font-bold mb-2">Last 7 Days Summary</h3>
         <p>Average Mood: {summary.averageMood.toFixed(2)}</p>
         <p>Highest Mood Day: {summary.highestMoodDay}</p>

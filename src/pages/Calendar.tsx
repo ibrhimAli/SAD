@@ -82,20 +82,21 @@ export default function Calendar() {
 
   return (
     <div className="p-4">
-      <div className="flex items-center justify-between mb-4">
-        <button onClick={() => setCurrentMonth(addMonths(currentMonth, -1))} className="px-2">Prev</button>
-        <h2 className="text-xl font-bold">{format(currentMonth, 'MMMM yyyy')}</h2>
-        <button onClick={() => setCurrentMonth(addMonths(currentMonth, 1))} className="px-2">Next</button>
-      </div>
-      <div
-        className="grid grid-cols-7 gap-2 text-center"
-        role="grid"
-        aria-label={`Mood entries for ${format(currentMonth, 'MMMM yyyy')}`}
-      >
-        {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((d) => (
-          <div key={d} className="font-semibold">{d}</div>
-        ))}
-        {days.map((day) => {
+      <div className="card mb-4">
+        <div className="flex items-center justify-between mb-4">
+          <button onClick={() => setCurrentMonth(addMonths(currentMonth, -1))} className="px-2">Prev</button>
+          <h2 className="text-xl font-bold">{format(currentMonth, 'MMMM yyyy')}</h2>
+          <button onClick={() => setCurrentMonth(addMonths(currentMonth, 1))} className="px-2">Next</button>
+        </div>
+        <div
+          className="grid grid-cols-7 gap-2 text-center"
+          role="grid"
+          aria-label={`Mood entries for ${format(currentMonth, 'MMMM yyyy')}`}
+        >
+          {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((d) => (
+            <div key={d} className="font-semibold">{d}</div>
+          ))}
+          {days.map((day) => {
           const key = format(day, 'yyyy-MM-dd');
           const entry = entryMap[key];
           const inMonth = isSameMonth(day, currentMonth);
@@ -115,7 +116,8 @@ export default function Calendar() {
               )}
             </button>
           );
-        })}
+          })}
+        </div>
       </div>
       {selected && (
         <DayDetailModal

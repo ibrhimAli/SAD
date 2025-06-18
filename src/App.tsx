@@ -18,6 +18,7 @@ import { usePermissionStore } from './contexts/usePermissionStore';
 import { useCheckInStore } from './contexts/useCheckInStore';
 import PremiumModal from './components/PremiumModal';
 import { usePremiumStore } from './contexts/usePremiumStore';
+import { shouldShowPremiumModal } from './utils/premium';
 import './index.css';
 
 function InnerApp() {
@@ -60,8 +61,14 @@ function InnerApp() {
   }, [lastPrompt, location.pathname]);
 
   React.useEffect(() => {
-    const daysUsed = (Date.now() - firstUse) / (24 * 60 * 60 * 1000);
-    if (!premiumDismissed && !trialStarted && daysUsed >= PREMIUM_DAYS) {
+    if (
+      shouldShowPremiumModal(
+        firstUse,
+        premiumDismissed,
+        trialStarted,
+        PREMIUM_DAYS,
+      )
+    ) {
       setShowPremium(true);
     }
   }, [firstUse, premiumDismissed, trialStarted]);

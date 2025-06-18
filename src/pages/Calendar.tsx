@@ -22,14 +22,16 @@ function DayDetailModal({ date, entry, onClose }: DayDetailModalProps) {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="bg-creamWhite dark:bg-indigo p-4 rounded shadow max-w-sm w-full">
-        <h2 className="text-lg font-bold mb-2">{format(date, 'PPP')}</h2>
+        <h2 className="text-2xl font-bold mb-2">{format(date, 'PPP')}</h2>
         {entry ? (
           <div className="space-y-1">
-            <p>Mood: {entry.mood}</p>
-            {entry.notes && <p>Notes: {entry.notes}</p>}
+            <p className="text-base leading-relaxed">Mood: {entry.mood}</p>
+            {entry.notes && (
+              <p className="text-base leading-relaxed">Notes: {entry.notes}</p>
+            )}
           </div>
         ) : (
-          <p>No entry for this day.</p>
+          <p className="text-base leading-relaxed">No entry for this day.</p>
         )}
         <button
           onClick={onClose}
@@ -81,11 +83,11 @@ export default function Calendar() {
   const today = new Date();
 
   return (
-    <div className="p-4">
-      <div className="card mb-4">
+    <div className="p-4 space-y-6">
+      <div className="card mb-4 space-y-4">
         <div className="flex items-center justify-between mb-4">
           <button onClick={() => setCurrentMonth(addMonths(currentMonth, -1))} className="px-2">Prev</button>
-          <h2 className="text-xl font-bold">{format(currentMonth, 'MMMM yyyy')}</h2>
+          <h2 className="text-2xl font-bold">{format(currentMonth, 'MMMM yyyy')}</h2>
           <button onClick={() => setCurrentMonth(addMonths(currentMonth, 1))} className="px-2">Next</button>
         </div>
         <div

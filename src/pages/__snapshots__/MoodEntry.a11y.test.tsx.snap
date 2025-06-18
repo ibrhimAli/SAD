@@ -2055,7 +2055,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
               "relatedNodes": [],
             },
           ],
-          "html": "<h1 class="text-2xl font-bold">Mood Entry</h1>",
+          "html": "<h1 class="text-2xl font-bold mb-4">Mood Entry</h1>",
           "impact": null,
           "none": [],
           "target": [
@@ -2088,7 +2088,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
               "message": "Form field does not have multiple label elements",
               "relatedNodes": [
                 {
-                  "html": "<label for="notes" class="block mb-1">Notes (optional)</label>",
+                  "html": "<label for="notes" class="block mb-1 text-base leading-relaxed">Notes (optional)</label>",
                   "target": [
                     "label",
                   ],
@@ -2138,7 +2138,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
               "relatedNodes": [],
             },
           ],
-          "html": "<h1 class="text-2xl font-bold">Mood Entry</h1>",
+          "html": "<h1 class="text-2xl font-bold mb-4">Mood Entry</h1>",
           "impact": null,
           "none": [],
           "target": [
@@ -2201,7 +2201,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
               "message": "Element has an explicit <label>",
               "relatedNodes": [
                 {
-                  "html": "<label for="notes" class="block mb-1">Notes (optional)</label>",
+                  "html": "<label for="notes" class="block mb-1 text-base leading-relaxed">Notes (optional)</label>",
                   "target": [
                     "label",
                   ],

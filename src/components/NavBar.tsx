@@ -8,30 +8,47 @@ export default function NavBar() {
     [
       'block px-2 py-1 rounded hover:bg-mutedBlueGray dark:hover:bg-indigo',
       isActive
-        ? 'bg-primary text-white dark:bg-primary-dark'
+        ? 'bg-primary-dark text-white dark:bg-primary-dark'
         : 'text-indigo dark:text-yellow',
     ].join(' ');
 
   const links = (
     <>
-      <NavLink to="/home" className={linkClass} onClick={() => setOpen(false)}>
+      <NavLink
+        to="/home"
+        aria-label="Home"
+        className={linkClass}
+        onClick={() => setOpen(false)}
+      >
         Home
       </NavLink>
-      <NavLink to="/about" className={linkClass} onClick={() => setOpen(false)}>
+      <NavLink
+        to="/about"
+        aria-label="About"
+        className={linkClass}
+        onClick={() => setOpen(false)}
+      >
         About
       </NavLink>
       <NavLink
         to="/customize"
+        aria-label="Customize"
         className={linkClass}
         onClick={() => setOpen(false)}
       >
         Customize
       </NavLink>
-      <NavLink to="/mood" className={linkClass} onClick={() => setOpen(false)}>
+      <NavLink
+        to="/mood"
+        aria-label="Mood"
+        className={linkClass}
+        onClick={() => setOpen(false)}
+      >
         Mood
       </NavLink>
       <NavLink
         to="/calendar"
+        aria-label="Calendar"
         className={linkClass}
         onClick={() => setOpen(false)}
       >
@@ -39,6 +56,7 @@ export default function NavBar() {
       </NavLink>
       <NavLink
         to="/scheduler"
+        aria-label="Scheduler"
         className={linkClass}
         onClick={() => setOpen(false)}
       >
@@ -46,6 +64,7 @@ export default function NavBar() {
       </NavLink>
       <NavLink
         to="/challenge"
+        aria-label="Challenge"
         className={linkClass}
         onClick={() => setOpen(false)}
       >
@@ -53,6 +72,7 @@ export default function NavBar() {
       </NavLink>
       <NavLink
         to="/analytics"
+        aria-label="Analytics"
         className={linkClass}
         onClick={() => setOpen(false)}
       >
@@ -67,6 +87,7 @@ export default function NavBar() {
         <button
           className="text-indigo dark:text-yellow"
           onClick={() => setOpen((o) => !o)}
+          aria-label="Toggle navigation"
         >
           &#9776;
         </button>

@@ -17,7 +17,7 @@ export default function Analytics() {
       {!trialStarted && (
         <button
           onClick={openPremium}
-          className="mt-4 px-4 py-2 bg-primary text-white rounded"
+          className="mt-4 px-4 py-2 bg-primary-dark text-white rounded"
         >
           See your 60-day trend
         </button>

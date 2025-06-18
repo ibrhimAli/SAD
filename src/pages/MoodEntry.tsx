@@ -59,7 +59,7 @@ export default function MoodEntry() {
 
       <button
         onClick={handleSave}
-        className="px-4 py-2 bg-primary text-white rounded"
+        className="px-4 py-2 bg-primary-dark text-white rounded"
       >
         Save Entry
       </button>

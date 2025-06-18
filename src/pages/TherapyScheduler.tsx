@@ -62,7 +62,7 @@ export default function TherapyScheduler() {
           onChange={(e) => setNewTime(e.target.value)}
           className="border p-2 rounded text-indigo dark:text-creamWhite"
         />
-        <button onClick={handleAdd} className="px-4 py-2 bg-primary text-white rounded">
+        <button onClick={handleAdd} className="px-4 py-2 bg-primary-dark text-white rounded">
           Add
         </button>
       </div>

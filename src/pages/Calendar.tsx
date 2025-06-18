@@ -33,7 +33,7 @@ function DayDetailModal({ date, entry, onClose }: DayDetailModalProps) {
         )}
         <button
           onClick={onClose}
-          className="mt-4 px-4 py-2 bg-primary text-white rounded"
+          className="mt-4 px-4 py-2 bg-primary-dark text-white rounded"
         >
           Close
         </button>
@@ -102,7 +102,7 @@ export default function Calendar() {
             <button
               key={key}
               onClick={() => setSelected(day)}
-              className={`h-16 border rounded flex flex-col items-center justify-center ${!inMonth ? 'text-mutedBlueGray' : ''}`}
+              className={`h-16 border rounded flex flex-col items-center justify-center ${!inMonth ? 'text-primary-dark dark:text-mutedBlueGray' : ''}`}
             >
               <span>{format(day, 'd')}</span>
               {entry && (

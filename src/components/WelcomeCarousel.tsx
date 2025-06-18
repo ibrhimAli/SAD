@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
 interface Slide {
@@ -29,6 +29,7 @@ const slides: Slide[] = [
 export default function WelcomeCarousel() {
   const [index, setIndex] = useState(0);
   const navigate = useNavigate();
+  const shouldReduceMotion = useReducedMotion();
 
   const next = () => {
     if (index < slides.length - 1) {
@@ -50,20 +51,26 @@ export default function WelcomeCarousel() {
           <AnimatePresence mode="wait">
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: 50 }}
+              initial={
+                shouldReduceMotion ? false : { opacity: 0, x: 50 }
+              }
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{ duration: 0.3 }}
+              exit={shouldReduceMotion ? {} : { opacity: 0, x: -50 }}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.3 }}
               className="w-full"
-              drag="x"
-              dragConstraints={{ left: 0, right: 0 }}
-              onDragEnd={(_, info) => {
-                if (info.offset.x < -100) {
-                  next();
-                } else if (info.offset.x > 100 && index > 0) {
-                  setIndex(index - 1);
-                }
-              }}
+              drag={shouldReduceMotion ? false : 'x'}
+              dragConstraints={shouldReduceMotion ? undefined : { left: 0, right: 0 }}
+              onDragEnd={
+                shouldReduceMotion
+                  ? undefined
+                  : (_, info) => {
+                      if (info.offset.x < -100) {
+                        next();
+                      } else if (info.offset.x > 100 && index > 0) {
+                        setIndex(index - 1);
+                      }
+                    }
+              }
             >
               <div className="text-8xl mb-4" aria-hidden="true">
                 {slides[index].icon}

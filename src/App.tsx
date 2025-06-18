@@ -16,6 +16,8 @@ import { getSeasonColors } from './utils/getSeasonColors';
 import PermissionsPrompt from './components/PermissionsPrompt';
 import { usePermissionStore } from './contexts/usePermissionStore';
 import { useCheckInStore } from './contexts/useCheckInStore';
+import PremiumModal from './components/PremiumModal';
+import { usePremiumStore } from './contexts/usePremiumStore';
 import './index.css';
 
 function InnerApp() {
@@ -26,6 +28,15 @@ function InnerApp() {
   const location = useLocation();
   const navigate = useNavigate();
   const [showCheckIn, setShowCheckIn] = React.useState(false);
+  const {
+    firstUse,
+    dismissed: premiumDismissed,
+    trialStarted,
+    setDismissed,
+    startTrial,
+  } = usePremiumStore();
+  const [showPremium, setShowPremium] = React.useState(false);
+  const PREMIUM_DAYS = 7;
 
   React.useEffect(() => {
     if (
@@ -47,6 +58,13 @@ function InnerApp() {
       setShowCheckIn(true);
     }
   }, [lastPrompt, location.pathname]);
+
+  React.useEffect(() => {
+    const daysUsed = (Date.now() - firstUse) / (24 * 60 * 60 * 1000);
+    if (!premiumDismissed && !trialStarted && daysUsed >= PREMIUM_DAYS) {
+      setShowPremium(true);
+    }
+  }, [firstUse, premiumDismissed, trialStarted]);
 
   React.useEffect(() => {
     if (typeof window === 'undefined' || !('Notification' in window)) {
@@ -95,6 +113,16 @@ function InnerApp() {
     navigate('/mood');
   };
 
+  const handleStartTrial = () => {
+    startTrial();
+    setShowPremium(false);
+  };
+
+  const handleDismissPremium = () => {
+    setDismissed(true);
+    setShowPremium(false);
+  };
+
   return (
     <div
       className={`min-h-screen ${
@@ -114,6 +142,12 @@ function InnerApp() {
             </button>
           </div>
         </div>
+      )}
+      {showPremium && (
+        <PremiumModal
+          onStart={handleStartTrial}
+          onClose={handleDismissPremium}
+        />
       )}
       <button onClick={toggle} className="m-4 p-2 border rounded">
         Toggle Theme

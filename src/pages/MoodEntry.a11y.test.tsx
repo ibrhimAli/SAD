@@ -16,6 +16,7 @@ beforeEach(() => {
     addEntry: () => Promise.resolve(),
     getEntries: () => [],
     getStreak: () => 0,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } as any)
 })
 

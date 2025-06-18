@@ -17,6 +17,49 @@ browser.
   Autumn or Winter), adjust notification frequency and set a daily check-in time.
 - **Streak Counter** – see how many days in a row you've entered your mood.
 - **Analytics** – visualize mood trends with interactive charts.
+- **Mood Log** – browse previous entries and notes in a calendar view.
+- **Onboarding Flow** – a welcome carousel followed by a permissions prompt for
+  notifications and location.
+- **Tip of the Day** – daily suggestions based on recent moods with optional
+  reminders.
+- **Wellness Challenge** – join a 30 day challenge to complete simple wellness
+  tasks.
+- **Premium Tier** – unlock the 60‑day insights chart after starting a free
+  trial.
+
+## Feature details
+
+### Onboarding flow
+
+First time visitors see a short **Welcome Carousel** followed by a
+permissions page. The carousel introduces mood logging, insights and daily tips.
+The permissions screen requests notifications and geolocation so the app can
+send reminders and tag entries with location data.
+
+### Mood log
+
+Mood entries are stored locally and can be reviewed from the **Calendar** page.
+Tapping any day shows the recorded mood and notes.
+
+### Insights chart
+
+The **Analytics** page displays a line chart plotting recent mood ratings and
+daylight hours. Hovering a point reveals sunrise, sunset and weather details.
+
+### Tip of the Day
+
+Daily tips are selected from `src/tips/tips.json` based on recent moods. Visit
+`/tip` to view today's tip and optionally schedule a reminder notification.
+
+### Wellness challenge
+
+The **Challenge** page runs a simple 30‑step challenge. Joining tracks your
+progress and displays confetti when completed.
+
+### Premium tier
+
+A modal appears a week after first use offering a free trial. Starting the trial
+unlocks the 60‑day mood trend on the analytics page.
 
 ## Browser requirements
 
@@ -97,6 +140,14 @@ a background gradient and optional illustration loaded from the `public/`
 folder. Selecting a different season instantly changes the look of the app.
 These choices are loaded when the app starts so your preferred theme and
 settings remain across visits.
+
+## Styling
+
+All colors and fonts are centralized in `tailwind.config.cjs` and `index.css`.
+The palette defines `primary`, `yellow`, `paleSky`, `indigo`, `creamWhite` and
+`mutedBlueGray`. The default font family is **Nunito** which is loaded in
+`index.html` and applied globally via the `font-nunito` utility. Referencing
+these variables keeps styling consistent across components.
 
 ## Expanding the ESLint configuration
 

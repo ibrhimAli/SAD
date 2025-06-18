@@ -45,6 +45,13 @@ export default function NavBar() {
         Scheduler
       </NavLink>
       <NavLink
+        to="/challenge"
+        className={linkClass}
+        onClick={() => setOpen(false)}
+      >
+        Challenge
+      </NavLink>
+      <NavLink
         to="/analytics"
         className={linkClass}
         onClick={() => setOpen(false)}

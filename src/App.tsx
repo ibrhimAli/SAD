@@ -133,7 +133,7 @@ function InnerApp() {
   return (
     <div
       className={`min-h-screen ${
-        dark ? 'dark bg-indigo text-creamWhite' : `${colors.bg} text-indigo`
+        dark ? 'dark bg-indigo text-creamWhite' : 'bg-pastelYellow text-indigo'
       }`}
       style={{ backgroundImage: `url(${colors.image})`, backgroundSize: 'cover' }}
     >

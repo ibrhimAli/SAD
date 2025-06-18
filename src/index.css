@@ -4,6 +4,6 @@
 
 @layer base {
   body {
-    @apply font-nunito;
+    @apply font-nunito bg-pastelYellow text-indigo dark:bg-indigo dark:text-creamWhite;
   }
 }

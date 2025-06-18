@@ -78,6 +78,7 @@ export default function Calendar() {
   for (let d = start; d <= end; d = addDays(d, 1)) {
     days.push(d);
   }
+  const today = new Date();
 
   return (
     <div className="p-4">
@@ -98,11 +99,12 @@ export default function Calendar() {
           const key = format(day, 'yyyy-MM-dd');
           const entry = entryMap[key];
           const inMonth = isSameMonth(day, currentMonth);
+          const isToday = day.toDateString() === today.toDateString();
           return (
             <button
               key={key}
               onClick={() => setSelected(day)}
-              className={`h-16 border rounded flex flex-col items-center justify-center ${!inMonth ? 'text-primary-dark dark:text-mutedBlueGray' : ''}`}
+              className={`h-16 border rounded flex flex-col items-center justify-center ${!inMonth ? 'text-primary-dark dark:text-mutedBlueGray' : ''} ${isToday ? 'ring-2 ring-primary-dark' : ''}`}
             >
               <span>{format(day, 'd')}</span>
               {entry && (

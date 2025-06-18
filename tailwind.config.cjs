@@ -14,6 +14,7 @@ module.exports = {
         indigo: '#1D3557',
         creamWhite: '#FFFDF8',
         mutedBlueGray: '#B7C9D4',
+        pastelYellow: '#FFF9E6',
       },
       fontFamily: {
         nunito: ['\'Nunito\'', 'sans-serif'],

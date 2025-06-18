@@ -1,5 +1,6 @@
 import React from 'react'
 import { Line } from 'react-chartjs-2'
+import { motion, useReducedMotion } from 'framer-motion'
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -79,9 +80,15 @@ export default function MoodAnalytics() {
   }
 
   const summary = React.useMemo(() => computeWeeklySummary(entries), [entries])
+  const shouldReduceMotion = useReducedMotion()
 
   return (
-    <div className="space-y-4">
+    <motion.div
+      className="space-y-4"
+      initial={shouldReduceMotion ? false : { opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: shouldReduceMotion ? 0 : 0.5 }}
+    >
       <div>
         <h2 className="font-bold mb-2">Mood Over Time</h2>
         <div className="text-sm mb-2">
@@ -108,6 +115,6 @@ export default function MoodAnalytics() {
         <p>Average Mood: {summary.averageMood.toFixed(2)}</p>
         <p>Highest Mood Day: {summary.highestMoodDay}</p>
       </div>
-    </div>
+    </motion.div>
   )
 }

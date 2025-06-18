@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
 import { useCheckInStore } from '../contexts/useCheckInStore';
 import { useMoodStore } from '../contexts/useMoodStore';
 
@@ -12,6 +13,7 @@ export default function MoodEntry() {
   const [notes, setNotes] = useState('');
   const [rows, setRows] = useState(1);
   const [saved, setSaved] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
 
   const handleSave = () => {
     addEntry({ mood, notes });
@@ -33,17 +35,18 @@ export default function MoodEntry() {
         <p className="mb-2 text-base leading-relaxed">How are you feeling today?</p>
         <div className="flex items-center gap-3">
           {moodEmojis.map((emoji, index) => (
-            <button
+            <motion.button
               key={emoji}
               onClick={() => setMood(index + 1)}
               aria-label={moodLabels[index]}
+              whileTap={shouldReduceMotion ? undefined : { scale: 0.9 }}
               className={
-                'w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 ' +
+                'w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition-transform duration-150 focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 ' +
                 (mood === index + 1 ? 'scale-110' : 'opacity-50')
               }
             >
               {emoji}
-            </button>
+            </motion.button>
           ))}
         </div>
       </div>

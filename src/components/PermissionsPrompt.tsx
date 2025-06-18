@@ -57,7 +57,7 @@ export default function PermissionsPrompt() {
         disabled={
           requesting || !notificationsSupported || !geolocationSupported
         }
-        className="px-4 py-2 bg-primary text-white rounded"
+        className="px-4 py-2 bg-primary-dark text-white rounded"
       >
         {requesting ? 'Requesting...' : 'Allow'}
       </button>

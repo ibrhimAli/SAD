@@ -1,7 +1,9 @@
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { useChallengeStore } from '../contexts/useChallengeStore'
 
 function Confetti() {
+  const shouldReduceMotion = useReducedMotion()
+  if (shouldReduceMotion) return null
   const colors = ['#FFD761', '#3b82f6', '#E5F0FB']
   const pieces = Array.from({ length: 25 }, (_, i) => i)
   return (
@@ -33,7 +35,13 @@ export default function Challenge() {
   return (
     <div className="p-4 space-y-4">
       <h1 className="text-2xl font-bold">30 Day Challenge</h1>
-      <div className="h-4 bg-mutedBlueGray rounded-full overflow-hidden">
+      <div
+        className="h-4 bg-mutedBlueGray rounded-full overflow-hidden"
+        role="progressbar"
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-valuenow={Math.round(progress)}
+      >
         <div
           className="h-full bg-gradient-to-r from-primary to-yellow"
           style={{ width: `${progress}%` }}
@@ -47,7 +55,7 @@ export default function Challenge() {
         ))}
       </ul>
       {!joined && (
-        <button onClick={join} className="px-4 py-2 bg-primary text-white rounded">
+        <button onClick={join} className="px-4 py-2 bg-primary-dark text-white rounded">
           Join Challenge
         </button>
       )}

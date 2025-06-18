@@ -136,7 +136,7 @@ function InnerApp() {
             <p className="mb-4">It's time for your daily check-in.</p>
             <button
               onClick={handleCheckIn}
-              className="px-4 py-2 bg-primary text-white rounded"
+              className="px-4 py-2 bg-primary-dark text-white rounded"
             >
               Go to Check-In
             </button>

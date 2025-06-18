@@ -14,7 +14,7 @@ export default function PremiumModal({ onStart, onClose }: PremiumModalProps) {
         <div className="flex justify-center gap-4">
           <button
             onClick={onStart}
-            className="px-4 py-2 bg-primary text-white rounded"
+            className="px-4 py-2 bg-primary-dark text-white rounded"
           >
             Start Free Trial
           </button>

@@ -11,9 +11,11 @@ export default function Analytics() {
   const closePremium = () => setShowPremium(false)
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Analytics</h1>
-      <MoodAnalytics />
+    <div className="p-4 space-y-4">
+      <h1 className="text-2xl font-bold">Analytics</h1>
+      <div className="bg-white dark:bg-indigo p-4 rounded shadow">
+        <MoodAnalytics />
+      </div>
       {!trialStarted && (
         <button
           onClick={openPremium}

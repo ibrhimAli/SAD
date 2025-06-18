@@ -1217,7 +1217,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
             },
           ],
           "any": [],
-          "html": "<button aria-label="Very sad" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary opacity-50">😢</button>",
+          "html": "<button aria-label="Very sad" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 opacity-50">😢</button>",
           "impact": null,
           "none": [
             CheckResult {
@@ -1243,7 +1243,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
             },
           ],
           "any": [],
-          "html": "<button aria-label="Sad" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary opacity-50">🙁</button>",
+          "html": "<button aria-label="Sad" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 opacity-50">🙁</button>",
           "impact": null,
           "none": [
             CheckResult {
@@ -1269,7 +1269,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
             },
           ],
           "any": [],
-          "html": "<button aria-label="Neutral" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary scale-110">😐</button>",
+          "html": "<button aria-label="Neutral" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 scale-110">😐</button>",
           "impact": null,
           "none": [
             CheckResult {
@@ -1295,7 +1295,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
             },
           ],
           "any": [],
-          "html": "<button aria-label="Happy" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary opacity-50">🙂</button>",
+          "html": "<button aria-label="Happy" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 opacity-50">🙂</button>",
           "impact": null,
           "none": [
             CheckResult {
@@ -1321,7 +1321,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
             },
           ],
           "any": [],
-          "html": "<button aria-label="Very happy" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary opacity-50">😄</button>",
+          "html": "<button aria-label="Very happy" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 opacity-50">😄</button>",
           "impact": null,
           "none": [
             CheckResult {
@@ -1363,7 +1363,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
             },
           ],
           "any": [],
-          "html": "<button aria-label="Very sad" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary opacity-50">😢</button>",
+          "html": "<button aria-label="Very sad" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 opacity-50">😢</button>",
           "impact": null,
           "none": [],
           "target": [
@@ -1381,7 +1381,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
             },
           ],
           "any": [],
-          "html": "<button aria-label="Sad" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary opacity-50">🙁</button>",
+          "html": "<button aria-label="Sad" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 opacity-50">🙁</button>",
           "impact": null,
           "none": [],
           "target": [
@@ -1399,7 +1399,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
             },
           ],
           "any": [],
-          "html": "<button aria-label="Neutral" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary scale-110">😐</button>",
+          "html": "<button aria-label="Neutral" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 scale-110">😐</button>",
           "impact": null,
           "none": [],
           "target": [
@@ -1417,7 +1417,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
             },
           ],
           "any": [],
-          "html": "<button aria-label="Happy" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary opacity-50">🙂</button>",
+          "html": "<button aria-label="Happy" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 opacity-50">🙂</button>",
           "impact": null,
           "none": [],
           "target": [
@@ -1435,7 +1435,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
             },
           ],
           "any": [],
-          "html": "<button aria-label="Very happy" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary opacity-50">😄</button>",
+          "html": "<button aria-label="Very happy" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 opacity-50">😄</button>",
           "impact": null,
           "none": [],
           "target": [
@@ -1461,7 +1461,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
         {
           "all": [],
           "any": [],
-          "html": "<button aria-label="Very sad" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary opacity-50">😢</button>",
+          "html": "<button aria-label="Very sad" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 opacity-50">😢</button>",
           "impact": null,
           "none": [
             CheckResult {
@@ -1479,7 +1479,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
         {
           "all": [],
           "any": [],
-          "html": "<button aria-label="Sad" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary opacity-50">🙁</button>",
+          "html": "<button aria-label="Sad" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 opacity-50">🙁</button>",
           "impact": null,
           "none": [
             CheckResult {
@@ -1497,7 +1497,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
         {
           "all": [],
           "any": [],
-          "html": "<button aria-label="Neutral" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary scale-110">😐</button>",
+          "html": "<button aria-label="Neutral" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 scale-110">😐</button>",
           "impact": null,
           "none": [
             CheckResult {
@@ -1515,7 +1515,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
         {
           "all": [],
           "any": [],
-          "html": "<button aria-label="Happy" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary opacity-50">🙂</button>",
+          "html": "<button aria-label="Happy" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 opacity-50">🙂</button>",
           "impact": null,
           "none": [
             CheckResult {
@@ -1533,7 +1533,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
         {
           "all": [],
           "any": [],
-          "html": "<button aria-label="Very happy" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary opacity-50">😄</button>",
+          "html": "<button aria-label="Very happy" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 opacity-50">😄</button>",
           "impact": null,
           "none": [
             CheckResult {
@@ -1589,7 +1589,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
             },
           ],
           "any": [],
-          "html": "<button aria-label="Very sad" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary opacity-50">😢</button>",
+          "html": "<button aria-label="Very sad" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 opacity-50">😢</button>",
           "impact": null,
           "none": [],
           "target": [
@@ -1621,7 +1621,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
             },
           ],
           "any": [],
-          "html": "<button aria-label="Sad" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary opacity-50">🙁</button>",
+          "html": "<button aria-label="Sad" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 opacity-50">🙁</button>",
           "impact": null,
           "none": [],
           "target": [
@@ -1653,7 +1653,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
             },
           ],
           "any": [],
-          "html": "<button aria-label="Neutral" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary scale-110">😐</button>",
+          "html": "<button aria-label="Neutral" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 scale-110">😐</button>",
           "impact": null,
           "none": [],
           "target": [
@@ -1685,7 +1685,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
             },
           ],
           "any": [],
-          "html": "<button aria-label="Happy" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary opacity-50">🙂</button>",
+          "html": "<button aria-label="Happy" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 opacity-50">🙂</button>",
           "impact": null,
           "none": [],
           "target": [
@@ -1717,7 +1717,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
             },
           ],
           "any": [],
-          "html": "<button aria-label="Very happy" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary opacity-50">😄</button>",
+          "html": "<button aria-label="Very happy" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 opacity-50">😄</button>",
           "impact": null,
           "none": [],
           "target": [
@@ -1751,7 +1751,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
               "relatedNodes": [],
             },
           ],
-          "html": "<button aria-label="Very sad" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary opacity-50">😢</button>",
+          "html": "<button aria-label="Very sad" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 opacity-50">😢</button>",
           "impact": null,
           "none": [],
           "target": [
@@ -1769,7 +1769,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
               "relatedNodes": [],
             },
           ],
-          "html": "<button aria-label="Sad" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary opacity-50">🙁</button>",
+          "html": "<button aria-label="Sad" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 opacity-50">🙁</button>",
           "impact": null,
           "none": [],
           "target": [
@@ -1787,7 +1787,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
               "relatedNodes": [],
             },
           ],
-          "html": "<button aria-label="Neutral" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary scale-110">😐</button>",
+          "html": "<button aria-label="Neutral" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 scale-110">😐</button>",
           "impact": null,
           "none": [],
           "target": [
@@ -1805,7 +1805,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
               "relatedNodes": [],
             },
           ],
-          "html": "<button aria-label="Happy" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary opacity-50">🙂</button>",
+          "html": "<button aria-label="Happy" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 opacity-50">🙂</button>",
           "impact": null,
           "none": [],
           "target": [
@@ -1823,7 +1823,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
               "relatedNodes": [],
             },
           ],
-          "html": "<button aria-label="Very happy" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary opacity-50">😄</button>",
+          "html": "<button aria-label="Very happy" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 opacity-50">😄</button>",
           "impact": null,
           "none": [],
           "target": [
@@ -1864,7 +1864,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
               "relatedNodes": [],
             },
           ],
-          "html": "<button aria-label="Very sad" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary opacity-50">😢</button>",
+          "html": "<button aria-label="Very sad" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 opacity-50">😢</button>",
           "impact": null,
           "none": [],
           "target": [
@@ -1889,7 +1889,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
               "relatedNodes": [],
             },
           ],
-          "html": "<button aria-label="Sad" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary opacity-50">🙁</button>",
+          "html": "<button aria-label="Sad" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 opacity-50">🙁</button>",
           "impact": null,
           "none": [],
           "target": [
@@ -1914,7 +1914,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
               "relatedNodes": [],
             },
           ],
-          "html": "<button aria-label="Neutral" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary scale-110">😐</button>",
+          "html": "<button aria-label="Neutral" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 scale-110">😐</button>",
           "impact": null,
           "none": [],
           "target": [
@@ -1939,7 +1939,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
               "relatedNodes": [],
             },
           ],
-          "html": "<button aria-label="Happy" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary opacity-50">🙂</button>",
+          "html": "<button aria-label="Happy" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 opacity-50">🙂</button>",
           "impact": null,
           "none": [],
           "target": [
@@ -1964,7 +1964,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
               "relatedNodes": [],
             },
           ],
-          "html": "<button aria-label="Very happy" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary opacity-50">😄</button>",
+          "html": "<button aria-label="Very happy" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 opacity-50">😄</button>",
           "impact": null,
           "none": [],
           "target": [
@@ -2021,7 +2021,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
               "relatedNodes": [],
             },
           ],
-          "html": "<textarea id="notes" class="w-full p-2 border rounded bg-creamWhite text-indigo dark:text-creamWhite" rows="4"></textarea>",
+          "html": "<textarea id="notes" class="w-full p-2 border rounded bg-creamWhite text-indigo dark:text-creamWhite transition-all" rows="1"></textarea>",
           "impact": null,
           "none": [],
           "target": [
@@ -2078,7 +2078,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
         {
           "all": [],
           "any": [],
-          "html": "<textarea id="notes" class="w-full p-2 border rounded bg-creamWhite text-indigo dark:text-creamWhite" rows="4"></textarea>",
+          "html": "<textarea id="notes" class="w-full p-2 border rounded bg-creamWhite text-indigo dark:text-creamWhite transition-all" rows="1"></textarea>",
           "impact": null,
           "none": [
             CheckResult {
@@ -2161,7 +2161,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
         {
           "all": [],
           "any": [],
-          "html": "<textarea id="notes" class="w-full p-2 border rounded bg-creamWhite text-indigo dark:text-creamWhite" rows="4"></textarea>",
+          "html": "<textarea id="notes" class="w-full p-2 border rounded bg-creamWhite text-indigo dark:text-creamWhite transition-all" rows="1"></textarea>",
           "impact": null,
           "none": [
             CheckResult {
@@ -2209,7 +2209,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
               ],
             },
           ],
-          "html": "<textarea id="notes" class="w-full p-2 border rounded bg-creamWhite text-indigo dark:text-creamWhite" rows="4"></textarea>",
+          "html": "<textarea id="notes" class="w-full p-2 border rounded bg-creamWhite text-indigo dark:text-creamWhite transition-all" rows="1"></textarea>",
           "impact": null,
           "none": [
             CheckResult {
@@ -2256,7 +2256,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
               "relatedNodes": [],
             },
           ],
-          "html": "<button aria-label="Very sad" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary opacity-50">😢</button>",
+          "html": "<button aria-label="Very sad" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 opacity-50">😢</button>",
           "impact": null,
           "none": [],
           "target": [
@@ -2274,7 +2274,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
               "relatedNodes": [],
             },
           ],
-          "html": "<button aria-label="Sad" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary opacity-50">🙁</button>",
+          "html": "<button aria-label="Sad" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 opacity-50">🙁</button>",
           "impact": null,
           "none": [],
           "target": [
@@ -2292,7 +2292,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
               "relatedNodes": [],
             },
           ],
-          "html": "<button aria-label="Neutral" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary scale-110">😐</button>",
+          "html": "<button aria-label="Neutral" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 scale-110">😐</button>",
           "impact": null,
           "none": [],
           "target": [
@@ -2310,7 +2310,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
               "relatedNodes": [],
             },
           ],
-          "html": "<button aria-label="Happy" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary opacity-50">🙂</button>",
+          "html": "<button aria-label="Happy" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 opacity-50">🙂</button>",
           "impact": null,
           "none": [],
           "target": [
@@ -2328,7 +2328,7 @@ exports[`MoodEntry accessibility > has no accessibility violations 1`] = `
               "relatedNodes": [],
             },
           ],
-          "html": "<button aria-label="Very happy" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary opacity-50">😄</button>",
+          "html": "<button aria-label="Very happy" class="w-12 h-12 flex items-center justify-center rounded-full border text-3xl transition transform focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 opacity-50">😄</button>",
           "impact": null,
           "none": [],
           "target": [

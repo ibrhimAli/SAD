@@ -28,7 +28,7 @@ export default function Customize() {
 
       <div>
         <label htmlFor="season-select" className="block mb-1">
-          Seasonal Preference
+          Your season right now?
         </label>
         <select
           id="season-select"
@@ -45,7 +45,7 @@ export default function Customize() {
 
       <div>
         <label htmlFor="notification-range" className="block mb-1">
-          Notification Frequency: {notificationFrequency}
+          Notification Frequency
         </label>
         <input
           id="notification-range"
@@ -56,6 +56,11 @@ export default function Customize() {
           onChange={(e) => setNotificationFrequency(Number(e.target.value))}
           className="w-full"
         />
+        <div className="flex justify-between text-sm text-mutedBlueGray mt-1">
+          <span>Low</span>
+          <span>Medium</span>
+          <span>High</span>
+        </div>
       </div>
 
       <div>
@@ -69,6 +74,9 @@ export default function Customize() {
           onChange={(e) => setReminderTime(e.target.value)}
           className="p-2 border rounded text-indigo dark:text-creamWhite"
         />
+        <p className="mt-1 text-sm text-mutedBlueGray">
+          You’ll be reminded daily at {reminderTime}
+        </p>
       </div>
     </div>
   );

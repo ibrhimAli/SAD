@@ -49,11 +49,20 @@ export default function Challenge() {
       </div>
       <ul className="space-y-1">
         {steps.map((s, i) => (
-          <li key={s} className={i < current ? 'line-through' : ''}>
-            {s}
+          <li key={s} className="flex items-center gap-2">
+            <input
+              type="checkbox"
+              checked={i < current}
+              readOnly
+              className="accent-primary-dark"
+            />
+            <span className={i < current ? 'text-mutedBlueGray line-through' : ''}>
+              {s}
+            </span>
           </li>
         ))}
       </ul>
+      <p className="font-semibold">{Math.round(progress)}% complete</p>
       {!joined && (
         <button onClick={join} className="px-4 py-2 bg-primary-dark text-white rounded">
           Join Challenge

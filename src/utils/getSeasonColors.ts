@@ -7,19 +7,19 @@ export interface SeasonColors {
 
 const MAP: Record<string, SeasonColors> = {
   Spring: {
-    bg: 'bg-gradient-to-b from-green-100 via-green-200 to-green-300',
+    bg: 'bg-gradient-to-b from-green-50 via-green-100 to-green-200',
     image: '/spring.svg',
   },
   Summer: {
-    bg: 'bg-gradient-to-b from-yellow-100 via-yellow-200 to-yellow-300',
+    bg: 'bg-gradient-to-b from-amber-50 via-amber-100 to-yellow-200',
     image: '/summer.svg',
   },
   Autumn: {
-    bg: 'bg-gradient-to-b from-orange-200 via-orange-300 to-yellow-300',
+    bg: 'bg-gradient-to-b from-orange-50 via-orange-100 to-yellow-200',
     image: '/autumn.svg',
   },
   Winter: {
-    bg: 'bg-gradient-to-b from-blue-100 via-blue-200 to-blue-300',
+    bg: 'bg-gradient-to-b from-sky-50 via-sky-100 to-blue-200',
     image: '/winter.svg',
   },
 }

@@ -9,8 +9,8 @@ import {
   Title,
   Tooltip,
   Legend,
-  ChartOptions,
 } from 'chart.js'
+import type { ChartOptions } from 'chart.js'
 import { format } from 'date-fns'
 import { useMoodStore } from '../contexts/useMoodStore'
 import { computeWeeklySummary } from '../contexts/analytics'

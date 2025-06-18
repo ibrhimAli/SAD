@@ -14,10 +14,10 @@ export default function Customize() {
 
   return (
     <div className="p-4 space-y-6">
-      <h1 className="text-2xl font-bold">Customize Settings</h1>
+      <h1 className="text-2xl font-bold mb-4">Customize Settings</h1>
 
       <div className="flex items-center gap-2">
-        <label htmlFor="dark-toggle">Dark Mode</label>
+        <label htmlFor="dark-toggle" className="text-base leading-relaxed">Dark Mode</label>
         <input
           id="dark-toggle"
           type="checkbox"
@@ -27,7 +27,7 @@ export default function Customize() {
       </div>
 
       <div>
-        <label htmlFor="season-select" className="block mb-1">
+        <label htmlFor="season-select" className="block mb-1 text-base leading-relaxed">
           Your season right now?
         </label>
         <select
@@ -44,7 +44,7 @@ export default function Customize() {
       </div>
 
       <div>
-        <label htmlFor="notification-range" className="block mb-1">
+        <label htmlFor="notification-range" className="block mb-1 text-base leading-relaxed">
           Notification Frequency
         </label>
         <input
@@ -64,7 +64,7 @@ export default function Customize() {
       </div>
 
       <div>
-        <label htmlFor="reminder-time" className="block mb-1">
+        <label htmlFor="reminder-time" className="block mb-1 text-base leading-relaxed">
           Daily Check-In Time
         </label>
         <input
@@ -74,7 +74,7 @@ export default function Customize() {
           onChange={(e) => setReminderTime(e.target.value)}
           className="p-2 border rounded text-indigo dark:text-creamWhite"
         />
-        <p className="mt-1 text-sm text-mutedBlueGray">
+        <p className="mt-1 text-base leading-relaxed text-mutedBlueGray">
           You’ll be reminded daily at {reminderTime}
         </p>
       </div>

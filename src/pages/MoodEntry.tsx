@@ -25,12 +25,12 @@ export default function MoodEntry() {
     setLastPrompt(Date.now());
   }, [setLastPrompt]);
 
-    return (
+  return (
       <div className="p-4 space-y-6 card">
-      <h1 className="text-2xl font-bold">Mood Entry</h1>
+      <h1 className="text-2xl font-bold mb-4">Mood Entry</h1>
 
       <div>
-        <p className="mb-2">How are you feeling today?</p>
+        <p className="mb-2 text-base leading-relaxed">How are you feeling today?</p>
         <div className="flex items-center gap-3">
           {moodEmojis.map((emoji, index) => (
             <button
@@ -50,7 +50,7 @@ export default function MoodEntry() {
 
 
       <div>
-        <label htmlFor="notes" className="block mb-1">
+        <label htmlFor="notes" className="block mb-1 text-base leading-relaxed">
           Notes (optional)
         </label>
         <textarea

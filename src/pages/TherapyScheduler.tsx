@@ -53,7 +53,7 @@ export default function TherapyScheduler() {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 space-y-6">
       <h1 className="text-2xl font-bold mb-4">Therapy Scheduler</h1>
       <div className="flex items-center gap-2 mb-4">
         <input
@@ -66,7 +66,7 @@ export default function TherapyScheduler() {
           Add
         </button>
       </div>
-      <ul className="space-y-2">
+      <ul className="space-y-2 mt-4">
         {times.map((time) => (
           <li key={time} className="flex items-center gap-2">
             <span className="flex-1">{time}</span>
@@ -78,7 +78,9 @@ export default function TherapyScheduler() {
             </button>
           </li>
         ))}
-        {times.length === 0 && <li>No times scheduled.</li>}
+        {times.length === 0 && (
+          <li className="text-base leading-relaxed">No times scheduled.</li>
+        )}
       </ul>
     </div>
   );

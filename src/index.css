@@ -7,3 +7,9 @@
     @apply font-nunito bg-pastelYellow text-indigo dark:bg-indigo dark:text-creamWhite;
   }
 }
+
+@layer components {
+  .card {
+    @apply bg-creamWhite dark:bg-indigo p-4 rounded shadow;
+  }
+}

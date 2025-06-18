@@ -9,7 +9,7 @@ export default function StreakCounter() {
   else if (streak >= 7) reward = '🔥';
 
   return (
-    <div className="mt-4 p-4 border rounded">
+    <div className="mt-4 p-4 border rounded bg-creamWhite dark:bg-indigo">
       <h2 className="text-lg font-bold">Current Streak</h2>
       <p className="text-2xl">
         {streak} day{streak === 1 ? '' : 's'} {reward}

@@ -13,6 +13,10 @@ module.exports = {
         paleSky: '#E5F0FB',
         indigo: '#1D3557',
         creamWhite: '#FFFDF8',
+        card: {
+          DEFAULT: '#FFFDF8',
+          indigo: '#1D3557',
+        },
         mutedBlueGray: '#B7C9D4',
         pastelYellow: '#FFF9E6',
       },

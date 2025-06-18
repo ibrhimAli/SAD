@@ -9,6 +9,7 @@ import Calendar from './pages/Calendar';
 import TherapyScheduler from './pages/TherapyScheduler';
 import Analytics from './pages/Analytics';
 import TipOfTheDay from './pages/TipOfTheDay';
+import Challenge from './pages/Challenge';
 import WelcomeCarousel from './components/WelcomeCarousel';
 import { useThemeStore } from './contexts/useThemeStore';
 import { getSeasonColors } from './utils/getSeasonColors';
@@ -127,6 +128,7 @@ function InnerApp() {
         <Route path="/mood" element={<MoodEntry />} />
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/scheduler" element={<TherapyScheduler />} />
+        <Route path="/challenge" element={<Challenge />} />
         <Route path="/analytics" element={<Analytics />} />
         <Route path="/tip" element={<TipOfTheDay />} />
       </Routes>

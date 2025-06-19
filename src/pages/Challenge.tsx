@@ -1,4 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion'
+import { useState } from 'react'
 import { useChallengeStore } from '../contexts/useChallengeStore'
 
 function Confetti() {
@@ -29,8 +30,15 @@ function Confetti() {
 
 export default function Challenge() {
   const { steps, joined, current, join, completeStep } = useChallengeStore()
+  const [showConfetti, setShowConfetti] = useState(false)
   const completed = current >= steps.length
   const progress = (current / steps.length) * 100
+
+  function handleComplete() {
+    completeStep()
+    setShowConfetti(true)
+    setTimeout(() => setShowConfetti(false), 2000)
+  }
 
   return (
     <div className="p-4 space-y-4">
@@ -53,7 +61,8 @@ export default function Challenge() {
             <input
               type="checkbox"
               checked={i < current}
-              readOnly
+              disabled={i !== current}
+              onChange={() => i === current && handleComplete()}
               className="accent-primary-dark"
             />
             <span className={i < current ? 'text-mutedBlueGray line-through' : ''}>
@@ -70,13 +79,13 @@ export default function Challenge() {
       )}
       {joined && !completed && (
         <button
-          onClick={completeStep}
+          onClick={handleComplete}
           className="px-4 py-2 bg-yellow text-indigo rounded"
         >
           Complete Step
         </button>
       )}
-      {completed && <Confetti />}
+      {showConfetti && <Confetti />}
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation, useNavigate, Link } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -169,6 +169,14 @@ function InnerApp() {
         Toggle Theme
       </button>
       <NavBar />
+      <div className="p-4">
+        <Link
+          to="/mood"
+          className="inline-block px-4 py-2 bg-primary-dark text-white rounded"
+        >
+          Log today’s mood
+        </Link>
+      </div>
       <Routes>
         <Route path="/" element={<WelcomeCarousel />} />
         <Route path="/permissions" element={<PermissionsPrompt />} />

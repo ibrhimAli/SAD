@@ -15,11 +15,13 @@ import type { ChartOptions } from 'chart.js'
 import { format } from 'date-fns'
 import { useMoodStore } from '../contexts/useMoodStore'
 import { computeWeeklySummary } from '../contexts/analytics'
+import { useThemeStore } from '../contexts/useThemeStore'
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 
 export default function MoodAnalytics() {
   const entries = useMoodStore((state) => state.entries)
+  const dark = useThemeStore((state) => state.dark)
 
   const labels = entries.map((e) => format(e.timestamp, 'MM/dd'))
   const moodData = entries.map((e) => e.mood)
@@ -54,14 +56,18 @@ export default function MoodAnalytics() {
     ],
   }
 
+  const tickColor = dark ? '#FFFDF8' : '#1D3557'
+  const gridColor = dark ? 'rgba(255,255,255,0.2)' : '#e5e7eb'
+  const tooltipBg = dark ? '#334155' : '#B7C9D4'
+
   const options: ChartOptions<'line'> = {
     events: ['click'],
     plugins: {
       legend: { display: false },
       tooltip: {
-        backgroundColor: '#B7C9D4',
-        titleColor: '#1D3557',
-        bodyColor: '#1D3557',
+        backgroundColor: tooltipBg,
+        titleColor: tickColor,
+        bodyColor: tickColor,
         callbacks: {
           afterBody: (ctx) => {
             const i = ctx[0]?.dataIndex ?? 0
@@ -77,6 +83,16 @@ export default function MoodAnalytics() {
             return [`Sunrise: ${sunrise}`, `Sunset: ${sunset}`, `Weather: ${weather}`]
           },
         },
+      },
+    },
+    scales: {
+      x: {
+        ticks: { color: tickColor },
+        grid: { color: gridColor },
+      },
+      y: {
+        ticks: { color: tickColor },
+        grid: { color: gridColor },
       },
     },
   }

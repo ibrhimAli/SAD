@@ -12,7 +12,7 @@ interface ThemeState {
 const initialDark = localStorage.getItem('themeDark') === 'true';
 const initialSeason = localStorage.getItem('seasonPreference') || 'Spring';
 const initialFrequency = parseInt(
-  localStorage.getItem('notificationFrequency') || '5',
+  localStorage.getItem('notificationFrequency') || '1',
   10
 );
 

@@ -40,6 +40,15 @@ function InnerApp() {
   const PREMIUM_DAYS = 7;
 
   React.useEffect(() => {
+    const root = document.documentElement;
+    if (dark) {
+      root.classList.add('dark');
+    } else {
+      root.classList.remove('dark');
+    }
+  }, [dark]);
+
+  React.useEffect(() => {
     if (
       !shown &&
       location.pathname !== '/permissions' &&

@@ -11,6 +11,7 @@ export default function Customize() {
     setNotificationFrequency,
   } = useThemeStore();
   const { reminderTime, setReminderTime } = useCheckInStore();
+  const frequencyLabels = ['Low', 'Medium', 'High'];
 
   return (
     <div className="p-4 space-y-6">
@@ -51,7 +52,8 @@ export default function Customize() {
           id="notification-range"
           type="range"
           min="0"
-          max="10"
+          max="2"
+          step="1"
           value={notificationFrequency}
           onChange={(e) => setNotificationFrequency(Number(e.target.value))}
           className="w-full"
@@ -61,6 +63,9 @@ export default function Customize() {
           <span>Medium</span>
           <span>High</span>
         </div>
+        <p className="text-center text-sm text-mutedBlueGray mt-1">
+          {frequencyLabels[notificationFrequency]}
+        </p>
       </div>
 
       <div>
@@ -75,7 +80,7 @@ export default function Customize() {
           className="p-2 border rounded text-indigo dark:text-creamWhite"
         />
         <p className="mt-1 text-base leading-relaxed text-mutedBlueGray">
-          You’ll be reminded daily at {reminderTime}
+          You’ll be reminded daily at {reminderTime}.
         </p>
       </div>
     </div>

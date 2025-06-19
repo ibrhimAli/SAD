@@ -10,7 +10,7 @@ browser.
   When geolocation is available the entry is tagged with your coordinates.
 - **Calendar** – view past entries on a monthly calendar and tap a day to see
   details.
-- **Therapy Scheduler** – set daily times to receive notifications reminding you
+- **Light Therapy Scheduler** – set daily times to receive notifications reminding you
   about therapy activities.
 - **Timer** – a simple countdown timer.
 - **Customization** – toggle dark mode, choose a seasonal theme (Spring, Summer,

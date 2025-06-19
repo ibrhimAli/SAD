@@ -33,12 +33,14 @@ export default function TherapyScheduler() {
             body: 'It is time for your scheduled therapy activity.',
           });
         }
-        const id2 = window.setTimeout(trigger, 24 * 60 * 60 * 1000);
-        ids.push(id2);
       };
 
-      const id = window.setTimeout(trigger, delay);
-      ids.push(id);
+      const timeoutId = window.setTimeout(() => {
+        trigger();
+        const intervalId = window.setInterval(trigger, 24 * 60 * 60 * 1000);
+        ids.push(intervalId);
+      }, delay);
+      ids.push(timeoutId);
     };
 
     times.forEach(schedule);

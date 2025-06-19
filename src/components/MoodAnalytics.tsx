@@ -60,6 +60,8 @@ export default function MoodAnalytics() {
       legend: { display: false },
       tooltip: {
         backgroundColor: '#B7C9D4',
+        titleColor: '#1D3557',
+        bodyColor: '#1D3557',
         callbacks: {
           afterBody: (ctx) => {
             const i = ctx[0]?.dataIndex ?? 0

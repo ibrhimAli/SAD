@@ -60,6 +60,14 @@ const moodLabels: Record<number, string> = {
   5: 'Very happy',
 };
 
+const moodEmojis: Record<number, string> = {
+  1: '\uD83D\uDE22',
+  2: '\uD83D\uDE41',
+  3: '\uD83D\uDE10',
+  4: '\uD83D\uDE42',
+  5: '\uD83D\uDE04',
+};
+
 export default function Calendar() {
   const [currentMonth, setCurrentMonth] = React.useState<Date>(startOfMonth(new Date()));
   const entries = useMoodStore((state) => state.entries);
@@ -98,23 +106,30 @@ export default function Calendar() {
           {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((d) => (
             <div key={d} className="font-semibold">{d}</div>
           ))}
-          {days.map((day) => {
+          {days.map((day, index) => {
           const key = format(day, 'yyyy-MM-dd');
           const entry = entryMap[key];
           const inMonth = isSameMonth(day, currentMonth);
           const isToday = day.toDateString() === today.toDateString();
+          const week = Math.floor(index / 7);
+          const bg =
+            week % 2 === 0
+              ? 'bg-creamWhite dark:bg-indigo'
+              : 'bg-pastelYellow dark:bg-paleSky';
           return (
             <button
               key={key}
               onClick={() => setSelected(day)}
-              className={`h-16 border rounded flex flex-col items-center justify-center ${!inMonth ? 'text-primary-dark dark:text-mutedBlueGray' : ''} ${isToday ? 'ring-2 ring-primary-dark' : ''}`}
+              className={`h-16 border rounded flex flex-col items-center justify-center ${bg} ${!inMonth ? 'text-primary-dark dark:text-mutedBlueGray' : ''} ${isToday ? 'ring-2 ring-primary-dark bg-paleSky dark:bg-mutedBlueGray' : ''}`}
             >
               <span>{format(day, 'd')}</span>
               {entry && (
                 <span
                   aria-label={moodLabels[entry.mood]}
-                  className={`mt-1 w-2 h-2 rounded-full ${moodColors[entry.mood]}`}
-                />
+                  className={`mt-1 w-4 h-4 rounded-full flex items-center justify-center ${moodColors[entry.mood]}`}
+                >
+                  <span className="text-xs">{moodEmojis[entry.mood]}</span>
+                </span>
               )}
             </button>
           );

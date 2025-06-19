@@ -60,11 +60,9 @@ export default function MoodEntry() {
           id="notes"
           value={notes}
           onFocus={() => setRows(4)}
-          onBlur={() => {
-            if (notes === '') setRows(1);
-          }}
+          onBlur={() => setRows(1)}
           onChange={(e) => setNotes(e.target.value)}
-          className="w-full p-2 border rounded bg-creamWhite text-indigo dark:text-creamWhite transition-all"
+          className="w-full px-2 py-1 border rounded bg-creamWhite text-indigo dark:text-creamWhite transition-all"
           rows={rows}
         />
       </div>

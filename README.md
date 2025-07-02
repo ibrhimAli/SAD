@@ -2,6 +2,28 @@
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
+## Program overview
+
+This repository contains a small mood tracking app built with **React Native**
+and [Expo Router](https://expo.dev/router). It showcases a tab based
+navigation structure with three screens:
+
+- **Home** – a landing page with a simple "waving hand" animation.
+- **Explore** – demonstrates reusable components such as collapsible sections
+  and the `ParallaxScrollView` header.
+- **Calendar** – the main feature where mood entries are displayed on a
+  calendar. Selecting a marked day opens a modal to view or edit the entry.
+
+Mood entries are persisted with
+`@react-native-async-storage/async-storage`. Sample data is loaded on first
+launch so the calendar is populated with entries. The entry modal uses
+`react-native-reanimated` and `react-native-gesture-handler` for drag to dismiss
+interactions.
+
+All screens reside in the `app/` directory and are wired up automatically
+through file based routing. Shared hooks live in `hooks/` and reusable UI
+components can be found in `components/`.
+
 ## Get started
 
 1. Install dependencies
@@ -47,6 +69,15 @@ Install them together with the rest of the dependencies and then start the app:
 ```bash
 npm install
 npx expo start
+```
+
+### Running tests
+
+Unit tests cover the calendar screen, modal behaviour and storage utilities. Run
+them with:
+
+```bash
+npm test
 ```
 
 ## Get a fresh project

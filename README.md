@@ -144,7 +144,8 @@ npm install -D vite-plugin-pwa
 ```
 
 The default configuration registers the worker automatically when visiting the
-site.
+site. The service worker is registered from `src/main.tsx` using
+`registerSW({ immediate: true })` so it starts right away.
 
 ## Production Deployment
 

@@ -1,4 +1,13 @@
-import { create } from 'zustand';
+import { create } from 'zustand'
+
+function scheduleReminder(time: string): void {
+  if (typeof window === 'undefined' || !('serviceWorker' in navigator)) return
+  navigator.serviceWorker.ready
+    .then((reg) => {
+      reg.active?.postMessage({ type: 'set-reminder', time })
+    })
+    .catch(() => {})
+}
 
 interface CheckInState {
   lastPrompt: number;
@@ -23,5 +32,8 @@ export const useCheckInStore = create<CheckInState>((set) => ({
   setReminderTime: (time) => {
     localStorage.setItem('checkInReminderTime', time);
     set({ reminderTime: time });
+    scheduleReminder(time);
   },
 }));
+
+scheduleReminder(initialTime);

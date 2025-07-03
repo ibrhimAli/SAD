@@ -1,8 +1,25 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+interface BeforeInstallPromptEvent extends Event {
+  prompt: () => Promise<void>;
+  userChoice: Promise<{ outcome: 'accepted' | 'dismissed'; platform: string }>;
+}
+
 export default function NavBar() {
   const [open, setOpen] = React.useState(false);
+  const [promptEvent, setPromptEvent] = React.useState<
+    BeforeInstallPromptEvent | null
+  >(null);
+
+  React.useEffect(() => {
+    const handler = (e: BeforeInstallPromptEvent) => {
+      e.preventDefault();
+      setPromptEvent(e);
+    };
+    window.addEventListener('beforeinstallprompt', handler);
+    return () => window.removeEventListener('beforeinstallprompt', handler);
+  }, []);
 
   const linkClass = ({ isActive }: { isActive: boolean }) =>
     [
@@ -78,6 +95,17 @@ export default function NavBar() {
       >
         Analytics
       </NavLink>
+      {promptEvent && (
+        <button
+          onClick={() => {
+            promptEvent.prompt();
+            setPromptEvent(null);
+          }}
+          className="block px-2 py-1 rounded text-indigo dark:text-yellow hover:bg-mutedBlueGray dark:hover:bg-indigo"
+        >
+          Install
+        </button>
+      )}
     </>
   );
 
@@ -93,7 +121,9 @@ export default function NavBar() {
         </button>
       </div>
       <div className="hidden md:flex gap-4">{links}</div>
-      {open && <div className="flex flex-col gap-2 mt-2 md:hidden">{links}</div>}
+      {open && (
+        <div className="flex flex-col gap-2 mt-2 md:hidden">{links}</div>
+      )}
     </nav>
   );
 }

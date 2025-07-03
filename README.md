@@ -147,6 +147,10 @@ The default configuration registers the worker automatically when visiting the
 site. The service worker is registered from `src/main.tsx` using
 `registerSW({ immediate: true })` so it starts right away.
 
+When the browser fires the `beforeinstallprompt` event the navigation bar shows
+an **Install** button. Selecting it triggers the stored event so users can add
+the app to their home screen.
+
 ## Production Deployment
 
 Running `npm run build` outputs a static `dist/` directory that can be served by

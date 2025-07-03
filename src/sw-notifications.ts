@@ -12,12 +12,14 @@ self.addEventListener('message', (event) => {
     next.setHours(h, m, 0, 0)
     if (next.getTime() <= now.getTime())
       next.setDate(next.getDate() + 1)
-    // @ts-ignore: TimestampTrigger is not yet typed in TS lib
-    const Trigger = (self as any).TimestampTrigger
+    // @ts-expect-error TimestampTrigger is not yet typed in TS lib
+    const Trigger = (self as unknown as {
+      TimestampTrigger: new (ts: number) => unknown
+    }).TimestampTrigger
     if (Trigger && 'showTrigger' in Notification.prototype) {
       self.registration.showNotification('Daily Check-In', {
         body: "It's time for your daily mood check-in.",
-        // @ts-ignore: TimestampTrigger is not yet typed in TS lib
+        // @ts-expect-error TimestampTrigger is not yet typed in TS lib
         showTrigger: new Trigger(next.getTime()),
       })
     }

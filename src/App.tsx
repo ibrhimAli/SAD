@@ -25,7 +25,7 @@ function InnerApp() {
   const { dark, toggle, season } = useThemeStore();
   const colors = getSeasonColors(season);
   const { shown } = usePermissionStore();
-  const { lastPrompt, setLastPrompt, reminderTime } = useCheckInStore();
+  const { lastPrompt, setLastPrompt } = useCheckInStore();
   const location = useLocation();
   const navigate = useNavigate();
   const [showCheckIn, setShowCheckIn] = React.useState(false);

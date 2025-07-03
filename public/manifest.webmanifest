@@ -1,0 +1,15 @@
+{
+  "name": "Seasonal Mood Tracker",
+  "short_name": "MoodTracker",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

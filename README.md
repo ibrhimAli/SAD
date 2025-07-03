@@ -130,6 +130,14 @@ npm run preview
 `npm run preview` serves the `dist/` folder using Vite's preview command so you
 can verify the production build.
 
+## Production Deployment
+
+Running `npm run build` outputs a static `dist/` directory that can be served by
+any static host. Popular options include **Vercel**, **Netlify** and **GitHub
+Pages**. Make sure the site is served over **HTTPS** so browser notifications
+and geolocation work correctly. All data is stored locally in the user's
+browser, so no backend is required.
+
 ## User preferences and seasonal theming
 
 Customization settings are managed with a zustand store and persisted to
